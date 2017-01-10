@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+<script>
+
+
+         // 1.       var timer = setTimeout(function(){
+         //            console.log(i++);
+         //        }, 1000);
+        //        clearTimeout(timer);
+        // 2.
+    var i = 0;
+    var timer = setInterval(function(){
+        console.log(i++);
+        if(i == 50){
+            clearInterval(timer);
+        }
+    },100)
+
+</script>
+
+</body>
+</html>

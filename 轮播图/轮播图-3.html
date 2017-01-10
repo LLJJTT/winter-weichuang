@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 390px;
+            height: 200px;
+            border: 1px solid #000;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+        #tab{
+            list-style: none;
+            width: 520px;
+            height: 120px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #tab li{
+            width: 120px;
+            height: 120px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 120px;
+            font-size: 60px;
+            float: left;
+            margin-right: 10px;
+        }
+        #direction{
+            width: 120px;
+            height: 30px;
+            position: absolute;
+            left: 50%;
+            margin-left: -60px;
+            bottom: 20px;
+        }
+        #direction span{
+            width: 50px;
+            height: 30px;
+            background: #cccccc;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tab">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="direction">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+</div>
+
+<script>
+    var oTab = document.getElementById("tab");
+    var oLeft = document.getElementById("left");
+    var oRight = document.getElementById("right");
+    var speed = 5;
+    //把tab的内容复制一份，宽度变为原来的2倍
+    oTab.innerHTML += oTab.innerHTML;
+    oTab.style.width = oTab.offsetWidth * 2 + "px";
+    setInterval(function(){
+        oTab.style.left = oTab.offsetLeft - speed + "px";
+        if(oTab.offsetLeft <= -oTab.offsetWidth / 2){
+            oTab.style.left = 0;
+        }
+        if(oTab.offsetLeft > 0){
+            oTab.style.left = -oTab.offsetWidth / 2 + "px";
+        }
+    }, 30);
+    oLeft.onmouseover = oRight.onmouseover = function(){
+        if(this == oLeft){
+            speed = 5;
+        }else{
+            speed = -5;
+        }
+    };
+
+
+</script>
+
+</body>
+</html>

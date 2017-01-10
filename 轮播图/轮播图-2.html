@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 1200px;
+            height: 420px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #imgs{
+            position: relative;
+        }
+        #imgs img{
+            position: absolute;
+            width: 1200px;
+            height: 420px;
+            top: 0;
+            left: 0;
+        }
+        #tab{
+            list-style: none;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 99999;
+
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: orange;
+        }
+        #arrows{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            z-index: 99999;
+        }
+        #arrows span{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/2.png" style="z-index: 4;">
+        <img src="img/3.png" style="z-index: 3;">
+        <img src="img/4.png" style="z-index: 2;">
+        <img src="img/5.png" style="z-index: 1;">
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+        <span id="arrows">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </span>
+</div>
+
+<script src="jslib.js"></script>
+<script>
+    var oTab = document.getElementById("tab");
+    var aLi = oTab.getElementsByTagName("li");
+    var oImgs = document.getElementById("imgs");
+    var aImg = oImgs.getElementsByTagName("img");
+    var oPrev = document.getElementById("prev");
+    var oNext = document.getElementById("next");
+    var oContainer = document.getElementById("container")
+    var zIndex = 4;
+    var iNow = 0;
+    var timer;
+
+    for(var i=0; i<aLi.length; i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover = function(){
+            iNow = this.index;
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+            }
+            this.className = "selected";
+
+            //把图片透明度变成0
+            aImg[this.index].style.opacity = 0;
+            aImg[this.index].style.filter = "alpha(opacity=0)";
+            //调整图片的层级
+            aImg[this.index].style.zIndex = ++zIndex;
+            //动画的方式把透明度变到1
+            animate(aImg[this.index], {
+                opacity: 100
+            });
+        };
+    }
+
+    oPrev.onclick = oNext.onclick = function(){
+        if(this == oNext){
+            iNow++;
+            if(iNow == aImg.length){
+                iNow = 0;
+            }
+        }else{
+            iNow--;
+            if(iNow == -1){
+                iNow = aImg.length - 1;
+            }
+        }
+        aLi[iNow].onmouseover();
+    };
+    play();
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        play();
+    };
+
+    function play(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        }, 500);
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

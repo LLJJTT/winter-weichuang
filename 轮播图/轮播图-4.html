@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+        #container{
+            width: 1200px;
+            height: 414px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #tab{
+            position: absolute;
+            bottom: 10px;
+            right:555px;
+        }
+        #tab li{
+            width: 20px;
+            height: 20px;
+            background: #000000;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #tab .selected{
+            background: #90ff95;
+        }
+        #arrows{
+            z-index: 999999;
+            /*position: absolute;*/
+            /*right: 10px;*/
+            /*bottom: 10px;*/
+        }
+        #arrows span{
+            width: 50px;
+            height: 200px;
+            background: #000000;
+            color: #22f4ff;
+            font-size: 35px;
+            opacity: 0.3;
+
+            text-align: center;
+
+            line-height: 200px;
+            float: left;
+            cursor: pointer;
+        }
+        #prev{
+            left: 50px;
+            top: 114px;
+            position: absolute;
+            border-radius: 13%;
+        }
+        #next{
+            right: 50px;
+            top: 114px;
+            position: absolute;
+            border-radius: 13%
+
+
+        }
+        #imgs{
+            width: 4080px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #imgs img{
+            float: left;
+            width: 1200px;
+            height: 414px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="imgs">
+        <img src="img/2.png">
+        <img src="img/3.png">
+        <img src="img/4.png">
+        <img src="img/5.png">
+    </div>
+    <ul id="tab">
+        <li class="selected">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+        <span id="arrows">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </span>
+</div>
+
+<script src="jslib.js"></script>
+<script>
+    /*
+     图片移动距离的规律：
+     index    distance
+     0        0*width
+     1        1*width
+     2        2*width
+     3        3*width
+     * */
+    window.onload = function(){
+        var oTab = document.getElementById("tab");
+        var aLi = document.getElementsByTagName("li");
+        var oImgs = document.getElementById("imgs");
+        var aImg = document.getElementsByTagName("img");
+        var imgWidth = aImg[0].offsetWidth;
+        var oPrev = document.getElementById("prev");
+        var oNext = document.getElementById("next");
+        var oContainer = document.getElementById("container");
+        var timer;
+        var iNow = 0;
+
+        //在所有图片后面增加第一个图片，并且改变父元素的宽度
+        oImgs.appendChild(aImg[0].cloneNode());
+        oImgs.style.width = imgWidth * aImg.length + "px";
+
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                iNow = this.index;
+                changeImg();
+            };
+        }
+
+        oPrev.onclick = oNext.onclick = function(){
+            if(this == oNext){
+                iNow++;
+                //iNow表示即将要显示的图片的索引
+                if(iNow == aImg.length){
+                    iNow = 1;//现在要显示第二张图片
+                    oImgs.style.left = 0;//过渡效果
+                }
+            }else{
+                iNow--;
+                //iNow表示即将要显示的图片的索引
+                if(iNow == -1){
+                    iNow = aImg.length - 2;
+                    oImgs.style.left = -(aImg.length - 1) * imgWidth + "px";
+                }
+            }
+            changeImg();
+        };
+
+        function changeImg(){
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+            }
+            //li是4个,img是5个，所以需要判断li的下标是否越界
+            aLi[iNow==aLi.length?0:iNow].className = "selected";
+
+            //图片做动画轮播
+            animate(oImgs, {
+                left : -iNow * imgWidth
+            });
+        }
+
+        play();
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            play();
+        };
+        function play(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            }, 1300);
+        }
+    };
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

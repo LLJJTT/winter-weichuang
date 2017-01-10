@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTN</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            /* left: 0;*/
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1"></div>
+<script>
+    var oDiv = document.getElementById("div1");
+    var timer = setInterval(function(){
+            oDiv.style.left = oDiv.offsetLeft + 10 + "px";
+            if(oDiv.offsetLeft > 1292)
+            {
+                clearInterval(timer);
+            }
+        }, 10)
+
+
+
+</script>
+
+</body>
+</html>

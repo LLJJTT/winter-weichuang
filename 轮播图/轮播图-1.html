@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: black;
+            color: white;
+            line-height: 20px;
+            text-align: center;
+            margin-right: 5px;
+
+
+        }
+        #tab{
+            position: absolute;
+            margin-top:-100px;
+            margin-left: 1100px;;
+            cursor: pointer;
+        }
+        
+        #container {
+            width: 1200px;
+            height: 410px;
+            margin: 0 auto;
+        }
+
+        
+        #tab .selected{
+            background: orange;
+        }
+        #container img{
+            width: 1200px;
+            height: 410px;
+        }
+        #imgs img{
+            display:none;
+            margin-top: 100px;
+        }
+        #imgs .selected{
+            display:block;
+        }
+        #prev{
+            width: 30px;
+            height: 30px;
+            background: black;
+            color: white;
+            text-align: center;
+            position: absolute;
+            margin-left:25px;
+            margin-top: -100px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #next{
+            width: 30px;
+            height: 30px;
+            background: black;
+            color: white;
+            text-align: center;
+            position: absolute;
+            margin-left:60px;
+            margin-top: -100px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="imgs">
+            <img class="selected" src="img/3.png" alt="#"/>
+            <img src="img/2.png" alt="#"/>
+            <img src="img/4.png" alt="#"/>
+            <img src="img/5.png" alt="#"/>
+        </div>
+
+        <ul id="tab">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+        <span id="arrows">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </span>
+
+    </div>
+    <script>
+        var oTab = document.getElementById("tab");
+        var aLi = oTab.getElementsByTagName("li");
+        var oImgs = document.getElementById("imgs");
+        var aImg = oImgs.getElementsByTagName("img");
+        var oPrev = document.getElementById("prev");
+        var oNext = document.getElementById("next");
+        var oContainer = document.getElementById("container");
+        var iNow = 0;//保存当前显示图片的索引
+        var timer;
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                iNow = this.index;
+                changImg();
+            };
+        }
+
+        oPrev.onclick = oNext.onclick = function(){
+            if(this == oNext){
+                iNow++;
+                if(iNow == aImg.length){
+                    iNow = 0;
+                }
+            }else{
+                iNow--;
+                if(iNow == -1){
+                    iNow = aImg.length - 1;
+                }
+            }
+            changImg();
+        };
+
+        play();
+
+        oContainer.onmouseover = function(){
+            clearInterval(timer);
+        };
+        oContainer.onmouseout = function(){
+            play();
+        };
+
+        function changImg(){
+            for(var i=0; i<aLi.length; i++){
+                aLi[i].className = "";
+                aImg[i].className = "";
+            }
+            aLi[iNow].className = "selected";
+            aImg[iNow].className = "selected";
+        }
+
+        function play(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            }, 1000);
+        }
+
+
+    </script>
+</body>
+</html>
