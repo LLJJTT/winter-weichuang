@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var oDiv = document.getElementById("div1");
+        oDiv.onclick = function(e){
+            e = e || window.event;
+
+//            var target;
+//            if(e.target){
+//                target = e.target;
+//            }else{
+//                target = e.srcElement;
+//            }
+            console.log(e.clientX + "," + e.clientY);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">add</button>
+    <div id="div1"></div>
+
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("div1");
+        oBtn.onclick = function(){
+            var obj = document.createElement("div");
+            obj.innerHTML = "abc";
+            oDiv.appendChild(obj);
+        };
+    </script>
+</body>
+</html>

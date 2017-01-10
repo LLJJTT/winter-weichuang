@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        #div1{
+            width: 400px;
+            height: 400px;
+            background: #ff0000;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            position: absolute;/*static*/
+            right: 50px;
+            bottom: 50px;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: #ffff00;
+            position: absolute;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>hhhhhhhhhh</h1>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <div id="div3">div3</div>
+
+
+    <script>
+        var oDiv3 = document.getElementById("div3");
+        //监听滚动条的滚动事件
+        window.onscroll = function(){
+            // 获取当前滚动条的移动的距离
+            var iScrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+            oDiv3.style.top = iScrollTop + 200 + "px";
+        };
+
+
+    </script>
+</body>
+</html>

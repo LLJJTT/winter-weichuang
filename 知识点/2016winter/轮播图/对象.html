@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj1 = new Object();
+        obj1.name = "zhangsan";
+        obj1.age = 20;
+        obj1.coding = function(){
+            alert("code");
+        };
+
+//        console.log(obj1.name);
+//        obj1.coding();
+
+
+        var obj2 = {
+            name: "lisi",
+            age: 18,
+            eat : function(){
+                alert("eat");
+            }
+        };
+        console.log(obj2.name);
+        obj2.eat();
+
+
+
+        function regist(obj){
+            var un = obj.username;
+            var pwd = obj.password;
+
+            var tel = obj.tel;
+        }
+        var obj = {
+            username : "zhangsan",
+            password : "123",
+            sex : "男",
+            school : "黑大",
+            email : "zhangsan@163.com",
+            tel : "132456789"
+        };
+        regist(obj);
+
+
+
+
+
+    </script>
+</body>
+</html>
