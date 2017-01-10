@@ -1,0 +1,113 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多级菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+
+        }
+
+        a{
+            text-decoration: none;
+
+        }
+        #menu .main-menu
+        {
+            width: 120px;
+            height: 30px;
+            float: left;
+            margin-right: 10px;
+            background: #aecc38;
+        }
+        #menu .main-menu-link{
+            height: 100%;
+            display: block;
+            line-height: 30px;
+        }
+        #menu .sub-menu{
+            display: none;
+
+        }
+        #box{
+            width: 400px;
+            height: 200px;
+            margin:0 auto;
+            margin-top: 300px;
+        }
+        #menu .sub-menu a{
+            width: 200px;
+            height: 300px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul id="menu">
+        <li class="main-menu">
+            <a href="#" class="main-menu-link">Link1</a>
+            <ul class="sub-menu">
+                <li><a href="#">sublink1</a></li>
+                <li><a href="#">sublink2</a></li>
+                <li><a href="#">sublink3</a></li>
+                <li><a href="#">sublink4</a></li>
+            </ul>
+        </li>
+
+        <li class="main-menu">
+            <a href="#" class="main-menu-link"  >Link2</a>
+            <ul class="sub-menu">
+                <li><a href="#">sublink1</a></li>
+                <li><a href="#">sublink2</a></li>
+                <li><a href="#">sublink3</a></li>
+                <li><a href="#">sublink4</a></li>
+            </ul>
+        </li>
+
+        <li class="main-menu"><a href="#"  class="main-menu-link">Link3</a>
+            <ul class="sub-menu">
+                <li><a href="#">sublink1</a></li>
+                <li><a href="#">sublink2</a></li>
+                <li><a href="#">sublink3</a></li>
+                <li><a href="#">sublink4</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+<script>
+    var oMenu = document.getElementById("menu");
+    var aLi = oMenu.getElementsByTagName("li");
+    for(var i=0; i<aLi.length; i++)
+    {
+        if(aLi[i].className == "main-menu"){
+
+
+
+            aLi[i].onmouseover = function(){
+                var oSubMenu = this.getElementsByTagName("ul")[0];
+                oSubMenu.style.display = "block";
+            };
+
+            aLi[i].onmouseout = function(){
+                var oSubMenu = this.getElementsByTagName("ul")[0];
+                oSubMenu.style.display = "none";
+            };
+        }
+    }
+
+</script>
+
+
+
+</body>
+
+</html>
