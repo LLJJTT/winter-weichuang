@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选择器</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        //$("*")选取所有元素
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#test2").hide();//ID选择器
+            });
+            $("#btn2").click(function(){
+                $("#test2").show();//ID选择器
+            });
+            $("#btn3").click(function(){
+                $(".test1").hide();//类选择器
+            });
+
+        });
+    </script>
+</head>
+<body>
+        <h>标题</h>
+        <p class="test1">第一段落-1</p>
+        <p class="test1">第一段落-2</p>
+        <p id="test2">第二段落</p>
+        <button id="btn1">点我</button>
+        <button id="btn2">再点我</button>
+ <button id="btn3">click me</button>
+
+</body>
+</html>
