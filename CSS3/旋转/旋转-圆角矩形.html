@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        #div1
+        {
+            width:100px;
+            height:75px;
+            background-color:red;
+            border:1px solid black;
+        }
+        #div2
+         {
+             width:100px;
+             height:75px;
+             background-color:red;
+             border:1px solid black;
+             transform:rotate(30deg);
+            /*-ms-transform:rotate(30deg); /!* IE 9 *!/*/
+            /*-webkit-transform:rotate(30deg); /!* Safari and Chrome *!/*/
+         }
+        
+        #div3{
+            background: #00ff00;
+            width: 150px;
+            height: 150px;
+            margin-top: 75px;
+            line-height: 150px;
+            text-align: center;
+            /*border-top-left-radius	定义了左上角的弧度*/
+            /*border-top-right-radius	定义了右上角的弧度*/
+            /*border-bottom-right-radius	定义了右下角的弧度*/
+            /*border-bottom-left-radius	定义了左下角的弧度*/
+            border-radius: 25px 50px;
+            /*四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角。*/
+            /*三个值: 第一个值为左上角, 第二个值为右上角和左下角，第三个值为右下角*/
+            /*两个值: 第一个值为左上角与右下角，第二个值为右上角与左下角*/
+            /*一个值： 四个圆角值相同*/
+
+            /*新的背景属性*/
+            /*顺序	                描述
+
+            /*background-clip	规定背景的绘制区域。
+            /*background-origin	规定背景图片的定位区域。
+            /*background-size	规定背景图片的尺寸。
+            /*text-shadow	     向文本添加阴影。
+            /*box-shadow         向盒子添加阴影。
+
+
+        }
+    </style>
+</head>
+<body>
+     <div id="div1">你好。这是一个 DIV 元素。</div>
+     <div id="div2">你好。这是一个 DIV 元素。</div>
+     <div id="div3">圆角矩形</div>
+</body>
+</html>
