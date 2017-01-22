@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#xianshi').click(function () {
+//                $('.text').eq(0).show('2000',function(){
+//                    $('.text').eq(1).show('2000',function(){
+//                        $('.text').eq(2).show('2000',function(){
+//                            $('.text').eq(3).show('2000');
+//                        });
+//                    });
+//                });
+                $('.text').first().show(500,function testShow(){
+                    $(this).next().show(500,testShow);
+
+                });
+            });
+            $('#yincang').click(function () {
+//                $('.text').eq(3).hide('2000',function(){
+//                    $('.text').eq(2).hide('2000',function(){
+//                        $('.text').eq(1).hide('2000',function(){
+//                            $('.text').eq(0).hide('2000');
+//                        });
+//                    });
+//                });
+//
+//           });
+                $('.text').last().hide(500,function testShow(){
+                    $(this).prev().hide(500,testShow);
+
+                });
+            });
+        });
+    </script>
+    <style>
+        .text{
+            background: #22f4ff;
+            color: black;
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            margin-left: 15px;
+            float: left;
+            display: none;
+        }
+        .btn{
+            background: #000000;
+            color: white;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            cursor: pointer;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        #box{
+            width: 1000px;
+            height: 1000px;
+            margin: 200px auto;
+            position: relative;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img class="text" src="img/2.png" alt="#"/>
+    <img class="text" src="img/3.png" alt="#"/>
+    <img class="text"  src="img/4.png" alt="#"/>
+    <img class="text"  src="img/5.png" alt="#"/>
+    <button class="btn" id="xianshi">显示</button>
+    <button class="btn" id="yincang">隐藏</button>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+   $(document).ready(
+           function(){
+               $('.show').click(function(){
+//   淡入淡出                show change in {>淡入 fadeIn();
+//                          hide change out{>淡出 fadeOut();
+//                                  {>切换 fadeToggle();
+//   滑动-上下               show change up{>向上出现 slideUp();
+//                          hide change down{>向下出现 slideDown();
+//                                  {>切换 slideToggle();
+
+
+
+                   $('#box').show(1000);
+               });
+               $('.hide').click(function(){
+                   $('#box').hide(1000);
+               });
+               $('.toggle').click(function(){
+                   $('#box').toggle(1000);
+               });
+           });
+    </script>
+    <title></title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" class="show" value="显示"/>
+<input type="button" class="hide" value="隐藏"/>
+<input type="button" class="toggle" value="切换"/>
+<div id="box">
+    box
+</div>
+
+</body>
+</html>
