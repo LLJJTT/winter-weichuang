@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.button').click(function(){
+                $('#box')
+                        .delay(2000)
+                        .slideUp(2000)
+                        .fadeIn(3000)
+                        .animate({left:'200px',top:'200px'},3000)
+                        .animate({width:'200px'})
+                        .animate({height:'200px'})
+                        .animate({opacity:0.5})
+                        .animate({fontSize:'50px'},2000)
+                        .queue(function(next){
+                            $(this).css('background','blue',2000);
+                            next();
+                        })
+                        .hide(5000)
+                        .animate({left:'600px',top:'200px'},5000)
+                        .show(2500)
+                        .animate({fontSize:'80px'},2000)
+                        .queue(function(next){
+                            $(this).css('background','black',5000);
+                            next();
+                        })
+                        .queue(function(next){
+                            $(this).css('color','white',1000);
+                            next();
+                        })
+
+
+            });
+
+        });
+
+    </script>
+    <style>
+        #box{
+            background: #00ff00;
+            width: 100px;
+            height: 100px;
+            color: #000000;
+            text-align: center;
+            line-height: 100px;
+            font-weight: bold;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<input class="button" type="button" value="点击"/>
+<div id="box">
+    BOX
+</div>
+
+</body>
+</html>

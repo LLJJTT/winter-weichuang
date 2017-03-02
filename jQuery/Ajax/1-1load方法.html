@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='../jquery-3.1.1.js'></script>
+    <script>
+        $(document).ready(function(){
+            $('input').click(function(){
+                $('#box').load('1-2load.html .url')
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="异步加载数据"/>
+<div id="box"></div>
+
+</body>
+</html>

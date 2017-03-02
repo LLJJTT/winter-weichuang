@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>捕获DOM中的文本以及输入的数据</title>
+</head>
+<body>
+ <p>
+     显示文档
+     <b>加粗部分</b>
+ </p>
+名称 <input type="text"/><br/><br/><br/><br/>
+<button id="btn1">显示文档</button>
+<button id="btn2">显示HTML</button>
+<button id="btn3">显示输入的值</button>
+<button id="btn4">显示href的网站地址</button>
+ <a href="www.hahahah.com">哈哈哈</a>
+
+</body>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    $(function(){
+        $('#btn1').click(function(){
+            alert("文档" + $('p').text());
+        });
+        $('#btn2').click(function(){
+            alert("HTML" + $('p').html());
+        });
+        $('#btn3').click(function(){
+            alert("显示输入的值" + $('input').val());
+        });
+        $('#btn4').click(function(){
+            alert("获取href" + $('a').attr('href'));
+        });
+    });
+
+</script>
+</html>

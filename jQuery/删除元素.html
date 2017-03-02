@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>remove empty </title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ffff00;
+            margin: 0 auto;
+        }
+        #div1 p{
+            text-align: center;
+            vertical-align: middle;
+            margin-top: 15px;
+
+        }
+        #div2{
+            width: 200px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <p>这是第1段</p>
+    <p>这是第2段</p>
+    <p class="p3">这是第3段</p>
+    <p class="p3">这是第4段</p>
+</div>
+<div id="div2">
+    <button id="btn1">remove1</button>
+    <button id="btn2">remove2</button>
+    <button id="btn3">empty</button>
+</div>
+</body>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    $(function(){
+        $('#btn1').click(function(){
+            $('#div1').remove();
+        });
+        $('#btn2').click(function(){
+            $('p').remove('.p3');
+        });
+        $('#btn3').click(function(){
+            $('#div1').empty();
+        });
+    })
+
+</script>
+</html>
