@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟手机短信发送功能</title>
+    <link rel="stylesheet" href="css/index.css"/>
+
+</head>
+<body>
+<div id="box">
+    <img src="img/background.jpeg" alt=""/>
+    <div id="screen"></div>
+    <div id="setting">
+        <div id="head-photo">
+            <img id="p1" src="img/heade-photo1.png" alt=""/>
+            <img id="p2" src="img/heade-photo2.png" alt=""/>
+        </div>
+        <div id="control">
+            <input id="import" type="text" placeholder="请输入"/>
+            <button id="send">发送</button>
+        </div>
+    </div>
+
+</div>
+<script src="../../jQuery/jquery-3.1.1.js"></script>
+<script>
+    $(function(){
+       $('#p1').click(function(){
+                    $('#p1').hide();
+                   $('#p2').show();
+        });
+        $('#p2').click(function(){
+            $('#p1').show();
+            $('#p2').hide();
+        });
+
+            var oSend  =document.getElementById('send');
+            var oScreen = document.getElementById('screen');
+            var oImport = document.getElementById('import');
+            oSend.onclick = function(){
+                oScreen.innerHTML = oImport.value;
+            }
+
+    });
+</script>
+
+
+</body>
+</html>
