@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>设置div样式</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box{
+            width: 1000px;
+            height: 800px;
+            margin: 0 auto;
+            background: #93C47D;
+        }
+        #p1{
+            color: #666666;
+            font-weight: bold;
+            font-size: 35px;
+            float: left;
+        }
+        #setting{
+            color: #ffffff;
+            background: #d81b21;
+            font-size: 20px;
+            border: 0;
+            width: 100px;
+            height: 35px;
+            cursor: pointer;
+            float: left;
+        }
+        #resetting{
+            color: #ffffff;
+            background: #d81b21;
+            font-size: 20px;
+            border: 0;
+            width: 100px;
+            height: 35px;
+            cursor: pointer;
+            float: left;
+        }
+        #changediv{
+            width: 150px;
+            height: 150px;
+            background: #cccccc;
+            border: #000000 3px solid;
+            position: relative;
+            left: 25px;
+            top: 100px;
+        }
+        #menu{
+            width: 280px;
+            height: 200px;
+            margin:200px 600px;
+            border:#666666 3px solid;
+            background:#ffffff;
+            display: none;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+        }
+
+        #background-color-red{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #FF0000;
+            line-height: 30px;
+            text-align: center;
+            opacity: 0.7;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        #background-color-yellow{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #ffff00;
+            line-height: 30px;
+            text-align: center;
+            opacity: 0.7;
+            cursor: pointer;
+            color: #ffffff;
+
+        }
+        #background-color-blue{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #0000FF;
+            line-height: 30px;
+            text-align: center;
+            opacity: 0.7;
+            cursor: pointer;
+            color: #ffffff;
+        }
+        .height-size-200{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #bbbbbb;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+
+
+        }
+        .height-size-300{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #bbbbbb;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+
+
+        }
+        .height-size-400{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #bbbbbb;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+
+
+        }
+        .width-size-200{
+             width: 40px;
+             height: 30px;
+             margin-left: 5px;
+             background: #bbbbbb;
+             line-height: 30px;
+             text-align: center;
+             cursor: pointer;
+         }
+        .width-size-300{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #bbbbbb;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .width-size-400{
+            width: 40px;
+            height: 30px;
+            margin-left: 5px;
+            background: #bbbbbb;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #reset{
+            background: darkblue;
+            border: 0;
+            width: 50px;
+            height: 30px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: bold;
+
+        }
+        #submit{
+            background: darkblue;
+            border: 0;
+            width: 50px;
+            height: 30px;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+    </style>
+    <script src="../jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+
+            $('#setting').click(function(){
+                $('#menu').show();
+                $('#background-color-red').click(function(){
+                    $('#changediv').css('background','red');
+
+                    $('.width-size-200').click(function(){
+                        $('#changediv').css('width','200px');
+                                });
+                    $('.width-size-300').click(function(){
+                        $('#changediv').css('width','300px');
+                               });
+                    $('.width-size-400').click(function(){
+                        $('#changediv').css('width','400px');
+                    });
+                    $('.height-size-200').click(function(){
+                        $('#changediv').css('height','200px');
+                    });
+                    $('.height-size-300').click(function(){
+                        $('#changediv').css('height','300px');
+                    });
+                    $('.height-size-400').click(function(){
+                        $('#changediv').css('height','400px');
+                    });
+                });
+            });
+            $('#background-color-blue').click(function() {
+                $('#changediv').css('background', 'blue');
+
+                $('.width-size-200').click(function(){
+                    $('#changediv').css('width','200px');
+                });
+                $('.width-size-300').click(function(){
+                    $('#changediv').css('width','300px');
+                });
+                $('.width-size-400').click(function(){
+                    $('#changediv').css('width','400px');
+                });
+                $('.height-size-200').click(function(){
+                    $('#changediv').css('height','200px');
+                });
+                $('.height-size-300').click(function(){
+                    $('#changediv').css('height','300px');
+                });
+                $('.height-size-400').click(function(){
+                    $('#changediv').css('height','400px');
+                });
+            });
+
+            $('#background-color-yellow').click(function() {
+                $('#changediv').css('background', 'yellow');
+
+                $('.width-size-200').click(function(){
+                    $('#changediv').css('width','200px');
+                });
+                $('.width-size-300').click(function(){
+                    $('#changediv').css('width','300px');
+                });
+                $('.width-size-400').click(function(){
+                    $('#changediv').css('width','400px');
+                });
+                $('.height-size-200').click(function(){
+                    $('#changediv').css('height','200px');
+                });
+                $('.height-size-300').click(function(){
+                    $('#changediv').css('height','300px');
+                });
+                $('.height-size-400').click(function(){
+                    $('#changediv').css('height','400px');
+                });});
+            $('#reset').click(function(){
+                $('#changediv').css({
+                            'width':'150px',
+                            'height':'150px',
+                          'background': '#cccccc',
+                        'border':' #000000 3px solid',
+                        'position': 'relative',
+                        'left': '25px',
+                        'top': '100px'
+                        });
+            });
+            $('#submit').click(function(){
+
+                $('#menu').hide();
+            });
+            $('#resetting').click(function(){
+                $('#menu').hide();
+                $('#changediv').css({
+                    'width':'150px',
+                    'height':'150px',
+                    'background': '#cccccc',
+                    'border':' #000000 3px solid',
+                    'position': 'relative',
+                    'left': '25px',
+                    'top': '100px'
+                });
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<div id="box">
+        <div id="head">
+            <p id="p1">请为下面的div设置样式</p>
+            <button id="setting">点击设置</button>
+            <button id="resetting">重新设置</button>
+        </div>
+
+        <div id="changediv">
+
+        </div>
+        <div id="menu">
+            <ul id="background">
+                <li class="select">请选择背景颜色：</li>
+                <button id="background-color-red">红</button>
+                <button id="background-color-yellow">黄</button>
+                <button id="background-color-blue">蓝</button>
+            </ul>
+            <ul id="width">
+                <li class="select">请选择宽（px）：</li>
+                <button class="width-size-200">200</button>
+                <button class="width-size-300">300</button>
+                <button class="width-size-400">400</button>
+            </ul>
+            <ul id="height">
+                <li class="select">请选择高（px）：</li>
+                <button class="height-size-200">200</button>
+                <button class="height-size-300">300</button>
+                <button class="height-size-400">400</button>
+            </ul>
+
+            <div id="btn">
+                <button id="reset">恢复</button>
+                <button id="submit">确定</button>
+            </div>
+            
+        </div>
+</div>
+
+
+</body>
+</html>
