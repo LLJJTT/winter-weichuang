@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标滑入显示鼠标所在部分图片</title>
+    <style>
+        #box{
+            width: 517px;
+            height: 600px;
+            margin: 100px auto;
+            background: #cccccc;
+            overflow: hidden;
+        }
+        #box div{
+            width: 258px;
+            height: 300px;
+            position: relative;
+
+            /*display: none;*/
+            float: left;
+            /*background: #000;*/
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+
+</div>
+<script src="../../jQuery/jquery-3.1.1.js"></script>
+<script>
+
+    $(function(){
+        $('#div1').mouseover(function(){
+            $('#div1').css({
+                'background-image':'url(img/pic.jpg)',
+                'background-repeat':'no-repeat',
+                'background-position':'left top',
+                'width':'50%','height':'50%'
+            })
+
+        });
+        $('#div2').mouseover(function(){
+            $('#div2').css({
+                'background-image':'url(img/pic.jpg)',
+                'background-repeat':'no-repeat',
+                'background-position':'right top',
+                'width':'50%','height':'50%'
+            })
+        });
+        $('#div3').mouseover(function(){
+            $('#div3').css({
+                'background-image':'url(img/pic.jpg)',
+                'background-repeat':'no-repeat',
+                'background-position':'left bottom',
+                'width':'50%','height':'50%'
+            })
+        });
+        $('#div4').mouseover(function(){
+            $('#div4').css({
+                'background-image':'url(img/pic.jpg)',
+                'background-repeat':'no-repeat',
+                'background-position':'right bottom',
+                'width':'50%','height':'50%'
+            })
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
