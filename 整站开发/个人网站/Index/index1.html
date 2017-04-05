@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu{
+            width: 600px;
+            height: 30px;
+            margin: 0 auto;
+
+        }
+        #menu .main-menu{
+            width: 120px;
+            height: 30px;
+            background:black;
+            float: left;
+            /* margin-right: 0px;*/
+        }
+        #menu{
+            margin-top: 0px;
+        }
+        #menu .main-menu a{
+            width: 120px;
+            height: 30px;
+            display: block;
+            line-height: 30px;
+            text-align: center;
+
+        }
+        #menu .main-menu.clear-magin{
+            margin-right: 0;
+        }
+        #menu .sub-menu{
+            background: white;
+            display: none;
+        }
+        #menu .sub-menu li a{
+            color: black;
+        }
+        #menu .main-menu li{
+            border-bottom: 1px dashed pink;
+        }
+        #menu .sub-menu a:hover{
+            background:plum;   
+        }
+        #contain img{
+            width: 5000px;
+            height: 35px;
+        }
+        #contain{
+            width: 100%px;
+            height: 35px;
+        }
+        #caidan{
+            background: black;
+        }
+        #zhuye
+        { color: white;
+        }
+        #xinxi{
+            color: white;
+        }
+        #jingli{
+            color: white;
+        }
+        #rizhi{
+            color: white;
+        }
+        #lianxi{
+            color: white;
+        }
+        #container{
+            width: 1500px;
+            height: 500px;
+            margin: 200px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #content{
+            width: 7500px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #content img{
+            width: 1500px;
+            height: 500px;
+            float: left;
+        }
+        #tab{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        #tab li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 5px;
+        }
+        #tab li.s2{
+            background: orange;
+        }
+        #arrow{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #arrow span{
+            float: left;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: #000;
+            color: #fff;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        
+
+
+    </style>
+</head>
+<body style="background:black;">
+    <div id="contain"><img src="img/shangmian.jpg" alt=""></div>
+    <div id="caidan">
+        <ul id="menu">
+            <li class="main-menu">
+                <a id="zhuye" href="index.html">我的主页</a>
+            </li>
+            <li class="main-menu">
+                <a id="xinxi" href="#">我的信息</a>
+                <ul class="sub-menu">
+                    <li><a href="#">兴趣爱好</a></li>
+                    <li><a href="#">家庭背景</a></li>
+                    <li><a href="#">朋友圈</a></li>
+                    <li><a href="#">我的学校</a></li>
+                    <li><a href="#">我的作品</a></li>
+                    <li><a href="#">我的照片</a></li>
+
+                </ul>
+            </li>
+            <li class="main-menu">
+                <a id="jingli" href="#">我的经历</a>
+                <ul class="sub-menu">
+                    <li><a href="#">小学</a></li>
+                    <li><a href="#">初中</a></li>
+                    <li><a href="#">高中</a></li>
+                    <li><a href="#">大学</a></li>
+                </ul>
+            </li>
+            <li class="main-menu">
+                <a id="rizhi" href="#">我的日志</a>
+                <ul class="sub-menu">
+                    <li><a href="#">2015年</a></li>
+                    <li><a href="#">2016年</a></li>
+                    <li><a href="#">2017年</a></li>
+                </ul>
+            </li>
+            <li class="main-menu">
+                <a id="lianxi" href="../Contact/lianxi.html">联系方式</a>
+
+            </li>
+        </ul>
+    </div>
+    <div id="container">
+        <div id="content">
+            <img class="s1" src="img/1.png" alt=""/>
+            <img src="img/2.png" alt=""/>
+            <img src="img/3.png" alt=""/>
+            <img src="img/4.png" alt=""/>
+            ../渐变式/img
+        </div>
+        <div id="tab">
+            <ul>
+                <li class="s2">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div id="arrow">
+            <span id="prev">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+    </div>
+
+<script src="jslib.js"></script>
+
+    <script>
+        var oMenu = document.getElementById("menu");
+        var aLi = oMenu.getElementsByTagName("li");//nodelist
+//        var aLi2 = document.getElementsByClassName("main-menu");/*不支持早期IE*/
+for(var i=0; i<aLi.length; i++){
+    if(aLi[i].className == "main-menu"){
+        aLi[i].onmouseover = function(){
+            var oSubMenu = this.getElementsByTagName("ul")[0];
+            oSubMenu.style.display = "block";
+        };
+        aLi[i].onmouseout = function(){
+            var oSubMenu = this.getElementsByTagName("ul")[0];
+            oSubMenu.style.display = "none";
+        };
+    }
+}
+var oContainer = document.getElementById("container");
+    var oContent = document.getElementById("content");
+    var aImg = oContent.getElementsByTagName("img");
+    var oTab = document.getElementById("tab");
+    var aLi = oTab.getElementsByTagName("li");
+    /*var oArrow = document.getElementById("arrow");
+     var aSpan = oArrow.getElementsByTagName("span");*/
+    var oNext = document.getElementById("next");
+    var oPrev = document.getElementById("prev");
+    var iNow = 0;
+    for(var i=0; i<aLi.length; i++) {
+        aLi[i].index = i;
+        aLi[i].onmouseover = function () {
+            changeImg(this.index);
+            iNow = this.index;
+        };
+    }
+    oNext.onclick = function(){
+        iNow++;
+        if(iNow == aLi.length){
+            iNow = 0;
+        }
+        changeImg(iNow);
+    };
+    oPrev.onclick = function(){
+        iNow--;
+        if(iNow == -1){
+            iNow = aImg.length - 1;
+        }
+        changeImg(iNow);
+    };
+    function changeImg(a){
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].className = "";
+        }
+        aLi[a].className = "s2";
+        animate(oContent, {left: -aImg[0].offsetWidth*a});
+    }
+    var timer;
+    timer = setInterval(function(){
+        oNext.onclick();
+    },2000);
+    oContainer.onmouseover = function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout = function(){
+        timer = setInterval(function(){
+            oNext.onclick();
+        },3000);
+    };
+</script>
+</body>
+</html>
+<!--
+事件：
+1、事件源
+2、事件处理函数
+3、事件e
+
+
+-->
