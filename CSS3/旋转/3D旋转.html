@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        #rotate2D,#rotate3D {
+            width: 400px;
+            height: 200px;
+            color: white;
+            position:relative;
+            font-weight:bold;
+            float:left;
+            margin-right:50px;
+            border-radius:5px;
+            border:1px solid #000000;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<img onmouseover="rotateDIV()" src="IMG/img/4.png" alt="#" id="rotate2D">
+ <img onmouseover="rotateYDIV()" src="IMG/img/5.png" alt="#" id="rotate3D">
+ <script>
+
+
+     var x,y,n=0,ny=0,rotINT,rotYINT;
+     function rotateDIV()
+     {
+         x=document.getElementById("rotate2D");
+         clearInterval(rotINT);
+         rotINT=setInterval("startRotate()",10)
+     }
+     function rotateYDIV()
+     {
+         y=document.getElementById("rotate3D");
+         clearInterval(rotYINT);
+         rotYINT=setInterval("startYRotate()",10)
+     }
+     function startRotate()
+     {
+         n=n+1;
+         x.style.transform="rotate(" + n + "deg)";
+         if (n==180 || n==360)
+         {
+             clearInterval(rotINT);
+             if (n==360){n=0}
+         }
+     }
+     function startYRotate()
+     {
+         ny=ny+1;
+         y.style.transform="rotateY(" + ny + "deg)";
+         if (ny==180 || ny>=360)
+         {
+             clearInterval(rotYINT);
+             if (ny>=360){ny=0}
+         }
+     }
+
+
+ </script>
+</body>
+</html>

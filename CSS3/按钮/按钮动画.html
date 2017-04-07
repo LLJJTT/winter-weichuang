@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮动画</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 70px;
+            margin: 0 auto;
+        }
+        button{
+            background: #f4511e;
+            color: #fff;
+            font-size: 28px;
+            width: 200px;
+            height:70px;
+            border:none;
+            text-decoration: none;
+            cursor: pointer;
+            display:inline-block;
+            border-radius: 4px;
+        }
+        button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+
+        }
+
+        button span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: -26px;
+            right: -30px;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            padding-right: 30px;
+        }
+
+        button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button>Hover<span></span>
+    </button>
+</div>
+
+</body>
+</html>
