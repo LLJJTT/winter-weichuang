@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建动画</title>
+    <style>
+        /*@keyframes规则内指定一个CSS样式和动画将逐步从目前的样式更改为新的样式。*/
+
+        #box{
+            width: 200px;
+            height: 200px;
+            animation: myfirst 5s;
+            background: #000;
+            /*-webkit-animation:myfirst 5s; !* Safari and Chrome *!*/
+        }
+        @-webkit-keyframes myfirst{
+            from{
+                background: #000;}
+            to{
+                background: #eee;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百分比创建简单动画</title>
+    <style>
+        #box{
+            background: #000;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            animation:move 4s linear 2s infinite alternate;//无线的交替
+        }
+        /*当动画完成时，会变回初始的样式。
+        @keyframes	规定动画。
+        animation	所有动画属性的简写属性，除了 animation-play-state 属性。
+        animation-name	规定 @keyframes 动画的名称。
+        animation-duration	规定动画完成一个周期所花费的秒或毫秒。默认是 0。
+        animation-timing-function	规定动画的速度曲线。默认是 "ease"。
+        animation-delay	规定动画何时开始。默认是 0。
+        animation-iteration-count	规定动画被播放的次数。默认是 1。
+        animation-direction	规定动画是否在下一周期逆向地播放。默认是 "normal"。
+        animation-play-state	规定动画是否正在运行或暂停。默认是 "running".
+        */
+        @keyframes move{
+
+            0% {
+                background:red;
+                left:0px;
+                top:0px;
+            }
+            25%{
+                background: #f6971f;
+                left: 200px;
+                top:0px;
+            }
+            50%{
+                background: #c000c0;
+                left:200px;
+                top:200px;
+            }
+            75%{
+                background: #fbee7b;
+                left: 0px;
+                top: 200px;
+            }
+            100%{
+                background: #CCCCCC;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+</body>
+</html>
