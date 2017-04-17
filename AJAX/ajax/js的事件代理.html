@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间委托(代理)</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+</ul>
+<button id="btn">点我增加li</button>
+
+<script>
+    var oUl = document.getElementById("ul");
+    //优化代码为
+    oUl.onclick = function(e){
+        if(e.target.tagName == "LI"){
+            alert(e.target.innerHTML);
+        }
+    };
+    var num = 5;
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick = function(){
+        num++;
+        oUl.innerHTML += "<li>"+ num.toString() +num.toString() +num.toString()  +"</li>";
+    };
+//    var aLi = oUl.getElementsByTagName("li");
+//    for(var i=0; i<aLi.length; i++){
+//        aLi[i].onclick = function(){
+//            alert(this.innerHTML);
+//        };
+//    }
+</script>
+</body>
+</html>

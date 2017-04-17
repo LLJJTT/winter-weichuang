@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <table id="table"></table>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            var str = "";
+            $("#btn").on("click", function(){
+                $.get("http://localhost/myCi/user/aa", {}, function(data){
+                    for(var i=0; i<data.length; i++){
+                        str += "<tr>"
+                            +"<td>"+data[i].num+"</td>"
+                            +"<td>"+data[i].name+"</td>"
+                        "</tr>";
+                    }
+                    $("#table").html(str);
+                }, "json");
+            });
+        });
+    </script>
+</body>
+</html>

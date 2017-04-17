@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+    <li>555</li>
+</ul>
+<script>
+    // 闭包就是函数内部的函数
+    var oUl = document.getElementById("ul");
+    var aLi = oUl.getElementsByTagName("li");
+    for(var i=0; i<aLi.length; i++){
+        (function(i){
+            aLi[i].onclick = function(){
+                alert(i);
+            };
+        })(i);
+    }
+</script>
+</body>
+</html>

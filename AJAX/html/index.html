@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li,a{
+            list-style: none;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>people</h1>
+    <ul>
+        <li><a href="andy.html">Andy</a></li>
+        <li><a href="jeremy.html">Jeremy</a></li>
+        <li><a href="richard.html">Richard</a></li>
+    </ul>
+ <div id="details"></div>
+    <script>
+        window.onload = function(){
+            var aNoads = document.getElementsByTagName("a");
+            for(var i= 0;i<aNoads.length;i++){
+                aNoads[i].onclick = function(){
+                          var request = new XMLHttpRequest();
+                          var method = "GET";
+                          var url = this.href;
+                          request.open(method,url,true);
+                          request.send(null);
+                          request.onreadystatechange =function(){
+                              if(request.readyState == 4){
+                                  if(request.status ==200){
+                                    document.getElementById("details").innerHTML = request.responseText;
+                                  }
+                              }
+                          }
+                    return false;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
