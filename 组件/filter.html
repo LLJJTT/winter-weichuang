@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<p>{{aa | bb : 3}}</p>
+	</div>
+	
+	<script src="angular.min.js"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($http, $scope){
+			$scope.aa = 2;
+		});
+		app.filter("bb", function(){
+			return function(item, times){
+		        var result = '';
+		        for(var i = 0; i < times; i++){
+		            result += item;
+		        }
+		        return result;
+		    }
+		});
+	</script>
+</body>
+</html>

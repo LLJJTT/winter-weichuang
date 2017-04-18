@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		
+	</div>
+	
+	<script src="angular.min.js"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($scope, person){
+			person.setName("张三");
+			alert(person.getName());
+		});
+		// app.factory("person", function(){
+		// 	var obj = {};
+		// 	obj.setName = function(name){
+		// 		this.name = name;
+		// 	};
+		// 	obj.getName = function(){
+		// 		return this.name;
+		// 	};
+		// 	return obj;
+		// });
+		app.service("person", function(){
+			this.setName = function(name){
+				this.name = name;
+			};
+			this.getName = function(){
+				return this.name;
+			};
+		});
+	</script>
+</body>
+</html>

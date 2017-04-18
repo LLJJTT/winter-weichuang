@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.aaa{
+			color: #f00;
+		}
+		.cover{
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.6);
+			position: absolute;
+			z-index: 100;
+			display: none;
+		}
+		.box{
+			background: #fff;
+			width: 300px;
+			height: 200px;
+			left: 50%;
+			margin-left: -150px;
+			top: 50%;
+			margin-top: -100px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+	<cover></cover>
+	<div id="header">
+		<aa></aa>
+	</div>
+
+	<script src="angular.min.js"></script>
+	<script>
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($http, $scope){
+			$scope.aaa = function(){
+				var oCover = document.querySelector(".cover");
+				oCover.style.display = "block";
+			};
+			$scope.hide = function(e){
+				var oCover = document.querySelector(".cover");
+				if(e.target.className != "box"){
+					oCover.style.display = "none";
+				}
+			};
+		});
+		app.directive("aa", function(){
+			return {
+				replace: false,
+				restrict: "EAC",
+				template: "<div>"
+				+"<button ng-click='aaa()'>点我弹层</button>"
+				+"</div>"			//此处写html
+			};
+		});
+		app.directive("cover", function(){
+			return {
+				template: "<div ng-click='hide($event)' class='cover'>"
+							+"<div class='box'></div>"
+						+"</div>"
+			};
+		});
+	</script>
+</body>
+</html>
