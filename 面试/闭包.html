@@ -1,0 +1,33 @@
+闭包：就是能够读取其他函数内部变量的函数。“定义在函数内部的函数”
+<script>
+	 var f1 = function(){
+	 	var num = 0;
+	 	var f2 = function(){
+	 		num++;
+	 	}();
+	 	alert(num);
+	 }();
+</script>
+<!-- f2就是闭包 -->
+闭包的优点：
+              ①能够读取函数的内部变量
+              ②让这些变量的值始终保存在内存中
+              ③不会增加额外的全局变量
+闭包的缺点：
+              ①使用闭包会涉及到跨作用域访问，每次访问都会导致性能损失
+              ②由于闭包会使得函数中变量被保存到内存中，会消耗内存，所以不能滥用闭包，
+               在IE中会导致内存泄漏
+                 解决方法：在退出函数之前，将不适用的局部变量全部删除
+
+ 闭包实例：给多个div绑定事件
+<script>
+	var aDiv = document.querySelectorAll("div");
+	for(var i=0;i<aDiv.length;i++){
+		function aa(num){
+			aDiv.onclick = function(){
+				alert(num);
+			}
+		}
+		aa(i);
+	}
+</script>

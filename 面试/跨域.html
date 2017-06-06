@@ -1,0 +1,29 @@
+跨域：
+跨域的三种形式：
+   1.iframe：
+   		这种方式要求两个页面必须属于同一个作用域
+   2.script(jsonp)：
+   		利用script标签的src属性，让这个src=另一个域下的js文件
+        只要那个js文件返还的是jsonp文件就行
+   3.通过后台代理的方式：
+   		当一个域向另一个域发送请求后：
+   				①先将请求发送到本域的后台
+   				②本域的后台通过模拟http请求，去访问其他域
+   				③在将返回的结果发给前端
+
+
+
+ <script>
+ 	http.creatServer(function(requst,response)){
+ 		//发送http头部
+ 		//http 状态值：
+ 		//200 ：OK；
+ 		//这个200是状态码
+ 		//内容类型：text/plain(无格式文本)
+ 		response.writeHead(200,{'Content-Type':'text/plain'});
+
+ 		//发送响应数据“hello world”;
+ 		response.end('hello world');
+ 	}.listen(8888);
+	
+</script>
