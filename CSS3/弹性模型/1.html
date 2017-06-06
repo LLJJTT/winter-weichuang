@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*body{*/
+            /*direction: rtl;*/
+            /*!* rtl (right-to-left)*!*/
+            /*!*弹性盒子在页面中的位置，*!*/
+        /*}*/
+        .flex-container{
+            display: flex;
+            /*变成弹性合模式*/
+            display: -webkit-flex;
+            width: 400px;
+            height: 205px;
+            background-color: lightgrey;
+            /*flex-direction: row-reverse;*/
+            /*盒子内部的元素，在盒子中的部位*/
+            /*flex-direction: column;*/
+            /*!*柱状排列*!*/
+            /*flex-direction:column-reverse;*/
+            /*柱状倒叙排列*/
+            /*justify-content: center;*/
+            /*内容对齐*/
+            /*justify-content:flex-start;*/
+            /*靠前对齐，靠后对齐*/
+            /*justify-content: flex-end;*/
+            justify-content:space-between;
+            /*平均分布，靠两边*/
+            /*justify-content:space-around;*/
+            /*平均分布，靠中间*/
+        }
+        .flex-item{
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            margin:10px;
+        }
+        .first{
+            -webkit-order:-1;
+            order:-1;
+            /*盒子内容元素排序*/
+        }
+        .flex-item:first-child{
+            marigin-right:auto;
+            -webkit-flex:2;
+            flex:2;
+            /*给盒子里面的元素，分配空间*/
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">flex-item 1</div>
+        <div class="flex-item first">flex-item 2</div>
+        <div class="flex-item">flex-item 3</div>
+        <div class="flex-item">flex-item 4</div>
+    </div>
+
+</body>
+</html>
