@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>系统确认5s跳转</title>
+</head>
+<style>
+*{
+	margin: 0；
+	padding:0;
+}
+body{
+	background: lightcyan;
+}
+#box{
+	margin-top:300px;
+
+}
+#h1{
+	text-align:center;
+	font-size:30px;
+	color:tomato;
+}
+#h2{
+	text-align:center;
+	font-size:30px;
+}
+#span{
+	text-align:center;
+	font-size:30px;
+	color:tomato;
+}
+</style>
+<body>
+	<div id="box" >
+		<h1 id="h1">请耐心等待系统确认</h1>
+
+		<h1 id="h2">
+			请等待
+			<span id="span">
+			5
+			</span>
+			秒
+		</h1>
+	</div>
+	<script>
+		var oSpan = document.getElementById('span');
+		var speed = 5;
+		var timer = setInterval(function(){
+			speed --;
+			oSpan.innerHTML = speed;
+			if (speed == 0) {
+				window.location="../WeiYueTiaoYue/weiyue.html";
+			}
+},1000);//显示时间定时跳转
+
+// setTimeout(function(times){
+// window.location="../WeiYueTiaoYue/weiyue.html";
+//  },5000);
+</script>
+</body>
+</html>

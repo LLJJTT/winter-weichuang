@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>某视频网站</title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="javascript" href="javascript/index.js"/>
+</head>
+<body>
+<div id="header">
+    <img id="logo" src="images/headerphotos/tengxunlogo.png" alt=""/>
+    <div id="searcher">
+        <img src="images/headerphotos/selectedlogo.png" alt=""/>
+        <input type="text" placeholder="大秦帝国之崛起" />
+        <button id="all-internet-search">全网搜</button>
+    </div>
+    <div id="header-in">
+        <ul>
+            <li class="title">领V币</li>
+            <li>|</li>
+            <li class="title" >看过</li>
+            <li>|</li>
+            <li class="title">看单</li>
+            <li>|</li>
+            <li class="title">上传</li>
+            <li>|</li>
+            <li class="title">PC客户端</li>
+        </ul>
+
+    </div>
+    
+</div>
+<div id="container-father">
+    <div id="container">
+        <div id="big-img">
+            <img src="images/lunbophotos/59jiegelaimei.jpg" alt=""/>
+            <img src="images/lunbophotos/baiduren.jpg" alt=""/>
+            <img src="images/lunbophotos/datangrongyao.jpg" alt=""/>
+            <img src="images/lunbophotos/meigonghexingdong.jpg" alt=""/>
+            <img src="images/lunbophotos/quanjishijianke.jpg" alt=""/>
+            <img src="images/lunbophotos/sanshengsanshi.jpg" alt=""/>
+            <img src="images/lunbophotos/shizhuangxiu.jpg" alt=""/>
+            <!--<img src="images/lunbophotos/xiangcunaiqing9.jpg" alt=""/>-->
+            <div id="info" style="z-index: 9">
+                <span id="total-page">/7</span>
+                <span id="current-page">1</span>
+            </div>
+            <div id="arrows">
+                <span id="prev" style="z-index: 9"></span>
+                <span id="next" style="z-index: 9"></span>
+            </div>
+        </div>
+
+        <div id="small-img">
+            <img src="images/lunbophotos/59jiegelaimei.jpg" alt=""/>
+            <img src="images/lunbophotos/baiduren.jpg" alt=""/>
+            <img src="images/lunbophotos/datangrongyao.jpg" alt=""/>
+            <img src="images/lunbophotos/meigonghexingdong.jpg" alt=""/>
+            <img src="images/lunbophotos/quanjishijianke.jpg" alt=""/>
+            <img src="images/lunbophotos/sanshengsanshi.jpg" alt=""/>
+            <img src="images/lunbophotos/shizhuangxiu.jpg" alt=""/>
+            <!--<img src="images/lunbophotos/xiangcunaiqing9.jpg" alt=""/>-->
+        </div>
+    </div>
+</div>
+<div id="box-father">
+    <div id="box">
+        <img class="text" src="images/lunbophotos/59jiegelaimei.jpg" alt=""/>
+        <img class="text" src="images/lunbophotos/baiduren.jpg" alt=""/>
+        <img class="text" src="images/lunbophotos/datangrongyao.jpg" alt=""/>
+        <img class="text" src="images/lunbophotos/meigonghexingdong.jpg" alt=""/>
+        <img class="text" src="images/lunbophotos/quanjishijianke.jpg" alt=""/>
+        <button class="btn" id="xianshi">显示</button>
+        <button class="btn" id="yincang">隐藏</button>
+    </div>
+</div>
+<div id="black-container">
+    <div id="menu-box">
+        <div id="black-menu">
+            <li>首页</li>
+            <li>关于我们</li>
+            <li>服务中心</li>
+            <li>招聘服务</li>
+            <li>网站导航</li>
+        </div>
+
+        <div id="telephone">
+            电话：18745708406 QQ:1072090332  Email:1072090332@qq.com
+        </div>
+        <div id="maker">
+            本模板基于
+            <a href="#"><strong>2017-2-20李井欢制作</strong></a>
+        </div>
+    </div>
+</div>
+<div id="bottom-write">
+    Powered by
+    <a href="#">
+        <strong>
+            PageAdmin CMS</strong>
+    </a>
+</div>
+<script src="javascript/jslib.js"></script>
+<script src="javascript/index.js"></script>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#xianshi').click(function () {
+//                $('.text').eq(0).show('2000',function(){
+//                    $('.text').eq(1).show('2000',function(){
+//                        $('.text').eq(2).show('2000',function(){
+//                            $('.text').eq(3).show('2000');
+//                        });
+//                    });
+//                });
+            $('.text').first().show(500,function testShow(){
+                $(this).next().show(500,testShow);
+
+            });
+        });
+        $('#yincang').click(function () {
+//                $('.text').eq(3).hide('2000',function(){
+//                    $('.text').eq(2).hide('2000',function(){
+//                        $('.text').eq(1).hide('2000',function(){
+//                            $('.text').eq(0).hide('2000');
+//                        });
+//                    });
+//                });
+//
+//           });
+            $('.text').last().hide(500,function testShow(){
+                $(this).prev().hide(500,testShow);
+
+            });
+        });
+    });
+</script>
+
+
+
+
+
+</body>
+</html>

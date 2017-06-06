@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    background:#666666;
+
+}
+#logo{
+    float: left;
+    opacity: 1;
+    height: 70px;
+
+}
+#searcher{
+    float: left;
+    line-height: 70px;
+    margin-left: 200px;
+    /*background: blue;*/
+}
+#searcher img{
+    height: 27px;
+    position: absolute;
+    left: 812px;
+    top: 24px;
+    cursor:pointer;
+}
+#searcher input{
+    border: #ace262 1px;
+    /*border-radius: 8%;*/
+    width: 180px;
+    height: 27px;
+    position: absolute;
+    left: 839px;
+    top: 24px;
+}
+#searcher button{
+    width: 45px;
+    height: 27px;
+    position: absolute;
+    left: 1019px;
+    top: 24px;
+    background: #93C47D;
+    /*border-radius:15%;*/
+    border:0;
+    cursor:pointer;
+    color:#eee;
+}
+
+
+#header-in{
+    width: 500px;
+    height: 70px;
+    float:right;
+    position: relative;
+}
+#header-in li{
+    float: left;
+    margin-left: 10px;
+    margin-top: 30px;
+    color: #999;
+    /*left: 300px;*/
+    position: relative;
+}
+#header-in .title{
+    float: left;
+    cursor: pointer;
+}
+#header-in .title:hover{
+    background: #20e6e4;
+    color: #000000;
+    /*border-radius: 25% 25%;*/
+    /*border: dashed red 1px;*/
+    
+}
+#container-father{
+    width: 100%;
+    height: 500px;
+    background: #ace262;
+}
+#container{
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+}
+#big-img{
+    width: 1000px;
+    height: 400px;
+    position: relative;
+}
+#big-img img{
+    width: 1000px;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+#small-img{
+    width: 1130px;
+    height: 100px;
+    background: #cccccc;
+    position: absolute;
+}
+#small-img img{
+    width: 130px;
+    height: 80px;
+    float: left;
+    cursor: pointer;
+    padding: 10px 0 10px 10px;
+}
+#info{
+    width: 990px;
+    height: 30px;
+    background: #000000;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+    padding-right: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    line-height: 30px;
+}
+#info span{
+    float:right;
+    color: #ffffff;
+}
+#arrows span{
+    width: 60px;
+    height: 60px;
+    position:absolute;
+    top: 50%;
+    margin-top: -30px;
+    cursor:pointer;
+    opacity: 0;
+    filter:alpha(opacity=0);
+    background-image: url(../images/lunbophotos/btn.gif);
+    background-repeat: no-repeat;
+}
+#prev{
+    left: 10px;
+    background-position: 0 0;
+}
+#next{
+    right:10px;
+    background-position: 0 -60px;
+}
+.text{
+    background: #22f4ff;
+    color: black;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    margin-left: 15px;
+    float: left;
+    display: none;
+
+}
+#xianshi{
+    background: #000000;
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 150px;
+    left: 485px;
+}
+#yincang{
+    background: #000000;
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 150px;
+    left: 545px;
+
+}
+#box-father{
+    width: 100%;
+    height: 355px;
+    background: #20e6e4;
+    margin-top: -180px;
+}
+#box{
+    left: 55px;
+    width: 1215px;
+    height: 155px;
+    margin: 200px auto;
+    position: relative;
+}
+#black-container{
+    height: 300px;
+    background: #414B4A;
+}
+#menu-box{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+}
+#black-menu li{
+    float: left;
+    margin-left: 25px;
+    margin-top: 35px;
+    /*color: #FFFFFF;*/
+    text-align: center;
+    cursor: pointer;
+}
+#black-menu li:hover{
+    color: #ffff99;
+}
+#menu-box {
+    color: #FFFFFF;
+}
+#telephone{
+    margin-top: 25px;
+    float: left;
+}
+#maker{
+    margin-top: 25px;
+    float: left;
+    left: 80px;
+    position: relative;
+}
+#maker a{
+    color:white;
+}
+#maker a:hover{
+    color:#f00;
+    font-size: 20px;
+}
+#bottom-write{
+    width: 300px;
+    height: 35px;
+    margin: 0 auto;
+}
+#bottom-write a{
+    text-align: center;
+    line-height: 35px;
+    color: #000;
+}
+#bottom-write a:hover{
+    color: #cc0000;
+    font-size: 16px;
+}

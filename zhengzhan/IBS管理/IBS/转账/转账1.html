@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #bj {
+            width: 100%;
+            height: 100%;
+        }
+        #bj img{
+            width: 100%;
+            height: 100%;
+        }
+        #gd{
+            width: 800px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            margin-left: -400px;
+            overflow: hidden;
+        }
+        #gda {
+            width: 1700px;
+            height: 80px;
+            position: relative;
+        }
+        #gd li{
+            width: 80px;
+            height: 80px;
+            font-size: 72px;
+            color: olivedrab;
+            line-height: 80px;
+            text-align: center;
+            margin-right: 5px;
+            float: left;
+        }
+        #gn{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            margin: -200px;
+        }
+        #container p{
+            width: 400px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            margin-left: -200px;
+            color: #fff;
+        }
+        #in2 {
+            position: absolute;
+            left: 0;
+            bottom: 100px;
+        }
+        #in3 {
+            position: absolute;
+            right: 0;
+            bottom: 100px;
+        }
+        #content button {
+            width: 130px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="bj">
+        <img src="tupian/2.jpg"/>
+    </div>
+    <div id="gd">
+        <ul id="gda">
+            <li>欢</li>
+            <li>迎</li>
+            <li>您</li>
+            <li>使</li>
+            <li>用</li>
+            <li>转</li>
+            <li>账</li>
+            <li>系</li>
+            <li>统</li>
+            <li>,</li>
+            <li>很</li>
+            <li>开</li>
+            <li>心</li>
+            <li>为</li>
+            <li>您</li>
+            <li>服</li>
+            <li>务</li>
+            <li>。</li>
+        </ul>
+    </div>
+    <div id="gn">
+        <div id="content">
+            <p>转账成功！</p>
+            <button id="in2">返回主界面</button>
+            <br/>
+            <button id="in3">继续转账</button>
+        </div>
+    </div>
+</div>
+<script>
+    var oIn3 = document.getElementById('in3')
+    var oGda = document.getElementById('gda');
+    oGda. innerHTML = oGda.innerHTML + oGda.innerHTML;
+    var aLi = oGda.getElementsByTagName('li');
+    oGda.style.width = aLi.length*(aLi[0].offsetWidth + 5) + 'px';
+    var speed = -2;
+    setInterval(function(){
+        if(oGda.offsetLeft <= -oGda.offsetWidth/2){
+            oGda.style.left = 0;
+        }
+        oGda.style.left = oGda.offsetLeft + speed + "px";
+    },30)
+    var oIn2 = document.getElementById("in2");
+    oIn2.onclick = function(){
+        window.location = "../斋藤宇/host1.html";
+    };
+    oIn3.onclick = function (){
+        oIn3.className = '';
+        window.location = "转账.html";
+    }
+</script>
+</body>
+</html>

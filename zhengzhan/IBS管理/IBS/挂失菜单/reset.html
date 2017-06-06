@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>重置密码</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<style>
+		body{
+			background: #eee
+		}
+		.box{
+			width: 500px;
+			border-radius: 5px;
+			border: 1px solid #0ff;
+			font-size: 18px;
+			margin: 0 auto;
+			margin-top: 200px;
+			background: #fff;
+			padding: 20px 0 20px 0;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" ng-app="myApp" ng-controller="myCtrl">
+		<form class="form-horizontal">
+			<div class="col-sm-5 control-label" id="label">
+				请输入您的新密码：
+			</div>
+			<div class="col-sm-5">
+				<input type="password" ng-model="password" class="form-control" placeholder="请输入新的6位密码">
+			</div>
+			<div class="col-sm-2">
+				<button ng-click="make_sure()" class="btn btn-default">确定</button>
+			</div>
+		</form>
+	</div>
+
+	<script src="../js/angular-1.2.18/angular.min.js"></script>
+	<script>
+		(function(){
+			var app = angular.module("myApp", []);
+			var oLabel = document.getElementById("label");
+			var loginUser = JSON.parse(sessionStorage.loginUser);
+			app.controller("myCtrl", function($scope, $http){
+				$scope.make_sure = function(){
+					$http({
+						method: "GET",
+						url: "http://127.0.0.1/IBS_php/user/update_password",
+						params: {
+							password : $scope.password,
+							username : loginUser.username
+						}
+					}).success(function(data){
+						alert(data);
+					});
+				};
+    		});
+		})();
+	</script>
+</body>
+</html>

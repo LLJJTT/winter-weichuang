@@ -1,0 +1,78 @@
+/***********样式重置 开始*************/
+*{
+	margin: 0;
+	padding: 0;
+}
+ol,ul{
+	list-style: none;
+}
+img{
+	border: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+/***********样式重置 结束*************/
+.wrapper{
+	width: 1180px;
+	margin: 0 auto;
+}
+
+/***********header开始*************/
+#header{
+	height: 60px;
+	background: url(../img/header-bg.png);
+}
+#header .wrapper{
+	height: 60px;
+	position: relative;
+}
+#logo{
+	margin-top: 2px;
+	float: left;
+	cursor: pointer;
+}
+#run{
+	float: left;
+	margin-top: 9px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+#search{
+	width: 360px;
+	height: 36px;
+	margin-top: 10px;
+	float: left;
+	margin-left: 45px;
+}
+#go-search{
+	height: 40px;
+	margin-top: 10px;
+	float: left;
+	margin-left: -1px;
+}
+#header ul li{
+	float: left;
+	margin-right: 10px;
+	line-height: 60px;
+	font-size: 12px;
+}
+#header ul{
+	width: 380px;
+	margin-left: 30px;
+	height: 60px;
+	float: left;
+}
+#header ul li a{
+	color: #ccc;
+}
+#header ul li a:hover{
+	color: #63b504;
+}
+#circle{
+	position: absolute;
+	top: 18px;
+	left: 1009px;
+}
+/***********header结束*************/

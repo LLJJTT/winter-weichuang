@@ -1,0 +1,116 @@
+/***********main开始**************/
+#main{
+	height: 499px;
+}
+#main-left{
+	width: 290px;
+	height: 499px;
+	font-weight: 700;
+	float: left;
+}
+#main-left h1{
+	padding-left: 8px;
+	font-size: 14px;
+	height: 37px;
+	line-height: 37px;
+	border-bottom: 2px solid #ea3939;
+	margin-bottom: 5px;
+}
+#main-left h1 a{
+	display: block;
+	height: 37px;
+	color: #ea3939;
+	padding-top: 5px;
+}
+#main-left h1 div{
+	width: 9px;
+	height: 9px;
+	float: left;
+	margin-top: 14px;
+	margin-right: 5px;
+	background: url(../img/红色箭头.gif);
+}
+#main-left ul{
+	margin-bottom: 15px;
+}
+#main-left li{
+	height: 37px;
+	line-height: 37px;
+	background: #efefef;
+	font-size: 14px;
+	text-align: center;
+	border-bottom: 1px solid gray;
+}
+#main-left li a{
+	display: block;
+	height: 37px;
+	color: #ea3939;
+}
+#main-left li a:hover{
+	background: white;
+	color: black;
+}
+#main-left-down{
+	width: 290px;
+	height: 340px;
+	background: #eb3939;
+}
+#main-left h3{
+	padding-left: 20px;
+	padding-top: 30px;
+	width: 250px;
+	height: 32px;
+	color: white;
+	line-height: 32px;
+	float: left;
+	margin-bottom: 15px;
+}
+#main-left p{
+	padding-left: 20px;
+	width: 250px;
+	color: white;
+	font-size: 12px;
+	line-height: 30px;
+}
+#main-right{
+	width: 770px;
+	height: 100%;
+	float: right;
+}
+#main-right h5{
+	height: 32px;
+	padding-top: 5px;
+	line-height: 35px;
+	border-bottom: 2px solid black;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+#main-right li{
+	width: 750px;
+	height: 34px;
+	line-height: 34px;
+	font-size: 12px;
+	margin: 0 auto;
+	border-bottom: 1px dotted gray;
+}
+#main-right li div{
+	margin-top: 7px;
+	margin-right: 5px;
+	width: 16px;
+	height: 17px;
+	background: url(../img/点.png);
+	float: left;
+}
+#main-right ul li a:hover{
+	color: #ea3939;
+}
+#main-right li a{
+	display: block;
+	float: left;
+	color: #6e6e6e;
+}
+#main-right li p{
+	float: right;
+	color: #6e6e6e;
+}
+/***********main结束**************/

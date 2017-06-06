@@ -1,0 +1,11 @@
+.box{
+    width: 600px;
+    border: 1px solid #78FA89;
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+    margin: 60px auto;
+}
+.box h2{
+    text-align: center;
+    margin-bottom: 15px;
+}

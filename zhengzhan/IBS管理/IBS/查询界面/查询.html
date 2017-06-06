@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>查询</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            ul{
+                list-style: none;
+            }
+            #bj {
+                width: 100%;
+                height: 100%;
+            }
+            #bj img{
+                width: 100%;
+                height: 100%;
+            }
+            #gd{
+                width: 800px;
+                height: 100px;
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                margin-left: -400px;
+                overflow: hidden;
+            }
+            #gda {
+                width: 1700px;
+                height: 80px;
+                position: relative;
+            }
+            #gd li{
+                width: 80px;
+                height: 80px;
+                font-size: 72px;
+                color: olivedrab;
+                line-height: 80px;
+                text-align: center;
+                margin-right: 5px;
+                float: left;
+            }
+            #gn{
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 400px;
+                left: 50%;
+                margin: -200px;
+            }
+            #container p{
+                width: 400px;
+                height: 40px;
+                font-size: 30px;
+                line-height: 40px;
+                text-align: center;
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                margin-left: -200px;
+            }
+            #in2{
+                width: 127px;
+                height: 50px;
+                font-size: 18px;
+            }
+            #in3{
+                width: 127px;
+                height: 50px;
+                font-size: 18px;
+            }
+            #gn input {
+                width: 250px;
+                height: 50px;
+                font-size: 28px;
+                text-align: center;
+            }
+            #gn form{
+                position: absolute;
+                top: 90px;
+                left: 50%;
+                margin-left: -130px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div id="container">
+        <div id="bj">
+            <img src="tupian/4.jpg"/>
+        </div>
+        <div id="gd">
+            <ul id="gda">
+                <li>欢</li>
+                <li>迎</li>
+                <li>您</li>
+                <li>使</li>
+                <li>用</li>
+                <li>查</li>
+                <li>询</li>
+                <li>系</li>
+                <li>统</li>
+                <li>,</li>
+                <li>很</li>
+                <li>开</li>
+                <li>心</li>
+                <li>为</li>
+                <li>您</li>
+                <li>服</li>
+                <li>务</li>
+                <li>。</li>
+            </ul>
+        </div>
+        <div id="gn" ng-app="myApp" ng-controller="myCtrl">
+            <p>请输入查询密码</p>
+            <form action="">
+                <input  type="password" ng-model="check_password" placeholder="请输入6位密码" />
+                <br/>
+                <button id="in2" ng-click="submit()">确认</button><button id="in3">重置</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/angular-1.2.18/angular.min.js"></script>
+    <script>
+        var oIn3 = document.getElementById('in3')
+        var oGda = document.getElementById('gda');
+        oGda. innerHTML = oGda.innerHTML + oGda.innerHTML;
+        var aLi = oGda.getElementsByTagName('li');
+        oGda.style.width = aLi.length*(aLi[0].offsetWidth + 5) + 'px';
+        var speed = -2;
+        setInterval(function(){
+            if(oGda.offsetLeft <= -oGda.offsetWidth/2){
+                oGda.style.left = 0;
+            }
+            oGda.style.left = oGda.offsetLeft + speed + "px";
+        },30);
+        oIn3.onclick = function (){
+            oIn3.className = '';
+        };
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope, $http){
+            $scope.submit = function(){
+                $http({
+                    method: "GET",
+                    url: "http://127.0.0.1/IBS_php/user/check_monney",
+                    params: {check_password : $scope.check_password}
+                }).success(function(data){
+                    if(data == "1"){
+                        window.location = "查询1.html";
+                    }else{
+                        alert("密码输入错误，请重新输入");
+                    }
+                });
+            };
+        });
+    </script>
+    </body>
+</html>

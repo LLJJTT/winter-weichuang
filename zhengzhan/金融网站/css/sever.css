@@ -1,0 +1,33 @@
+/***********main开始**************/
+#main{
+	height: 612px;
+}
+#main-up{
+	width: 462px;
+	margin: 0 auto;
+	padding-top: 50px;
+} 
+#main-up li{
+	width: 154px;
+	height: 52px;
+	background: #f1f1f1;
+	float: left;
+}
+#main-up li a{
+	display: block;
+	width: 154px;
+	height: 52px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 52px;
+	font-size: 14px;
+}
+#main-down{
+	display: block;
+	width: 915px;
+	height: 383px;
+	background: url(../img/融资咨询.jpg);
+	margin: 0 auto;
+	margin-top: 100px;
+}
+/***********main结束**************/

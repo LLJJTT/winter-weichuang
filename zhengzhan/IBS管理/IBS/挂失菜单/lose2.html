@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>挂失菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px/1.6em Microsoft YaHei, Tahoma, simsun;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #head {
+            width: 100%;
+            height: 120px;
+            background: url("imgs/head.png");
+        }
+
+        #head h1 {
+            font-size: 40px;
+            width: 200px;
+            height: 60px;
+            color: darkblue;
+            margin-left: 100px;
+        }
+
+        #head h2 {
+            margin-left: 100px;
+            font-size: 20px;
+            width: 200px;
+            color: darkblue;
+        }
+
+        #head1 {
+            float: left;
+        }
+
+        #search {
+            width: 800px;
+            height: 40px;
+            margin-top: 80px;
+            margin-left: 5px;
+            float: right;
+        }
+        #search1{
+            color: darkblue;
+            font-size: 18px;
+        }
+        #header {
+            width: 100%;
+            height: 50px;
+            background: #eee;
+        }
+
+        #header #choose {
+            width: 1300px;
+            height: 50px;
+            margin: 0 auto;
+            background: #eeeeee;
+        }
+
+        #header .language {
+            width: 180px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #header #choose a:hover {
+            color: orange;
+        }
+
+        #container {
+            background: white;
+            width: 1350px;
+            height: 404px;
+        }
+
+        #content1 {
+            width: 200px;
+            height: 400px;
+            background: #eeeeee;
+            border: 2px solid #cccccc;
+            margin-left: 90px;
+            text-indent: 5px;
+            float: left;
+        }
+
+        #content1 h1 {
+            font-size: 25px;
+            height: 60px;
+            width: 180px;
+            line-height: 60px;
+            margin-left: 10px;
+            border-bottom: 2px solid #cccccc;
+        }
+
+        #content1 li {
+            margin-left: 10px;
+            height: 50px;
+            width: 200px;
+            line-height: 50px;
+        }
+
+        #content1 li a:hover {
+            color: orange;
+        }
+
+        #content2 {
+            width: 1000px;
+            height: 400px;
+            background: #FFF;
+            float: left;
+            margin-left: 30px;
+            border: 2px solid #cccccc;
+        }
+
+        #content2 h1 {
+            width: 900px;
+            height: 40px;
+            border-radius: 10px;
+            background: #eeeeee;
+            margin: 5px auto;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #information {
+            background: #cccccc;
+            border-radius: 20px;
+            width: 500px;
+            height: 270px;
+            margin: auto;
+        }
+        #information .input{
+            font-size: 20px;
+            display:inline-block;
+            width: 200px;
+            margin-top: 10px;
+            text-indent: 10px;
+            color: crimson;
+        }
+        #button1{
+            width: 500px;
+            height: 30px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #button1 .button2{
+            font-size: 15px;
+            margin-left: 140px;
+            color:crimson;
+        }
+        #serve a {
+            font-size: 23px;
+        }
+
+        #serve1 div {
+            float: left;
+            width: 49px;
+            height: 100px;
+            margin-left: 23px;
+            margin-top: 20px;
+        }
+
+        #footer {
+            background: url("imgs/footer.png");
+            width: 100%;
+            height: 150px;
+            position: relative;
+        }
+
+        #footer1 {
+            width: 500px;
+            height: 100px;
+            margin-left: 200px;
+        }
+
+        #footer1 .language1 {
+            float: left;
+            width: 60px;
+            line-height: 100px;
+        }
+
+        #footer2 {
+            width: 500px;
+            height: 20px;
+            text-align: center;
+            font-size: 10px;
+            margin-left: 200px;
+        }
+
+        #footer3 {
+            position: absolute;
+            right: 80px;
+            top: 30px;
+            width: 350px;
+            height: 80px;
+            float: left;
+        }
+
+        #footer3 div {
+            width: 57px;
+            height: 80px;
+            float: left;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="head">
+        <div id="head1">
+            <h1>网上银行</h1>
+
+            <h2>BOCNET</h2>
+        </div>
+        <div id="search">
+            <span id="search1">服务热线：888888</span>
+            <input type="text"/>
+            <button>搜索</button>
+        </div>
+    </div>
+    <div id="header">
+        <div id="choose">
+            <ul>
+                <li class="language"><a href="#">返回首页</a></li>
+                <li class="language"><a href="#">个人中心</a></li>
+                <li class="language"><a href="#">登陆记录</a></li>
+                <li class="language"><a href="#">消费记录</a></li>
+                <li class="language"><a href="#">网上贷款</a></li>
+                <li class="language"><a href="#">VIP业务</a></li>
+                <li class="language"><a href="#">退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+        <div id="content1">
+            <h1>银行账户</h1>
+            <ul>
+                <li><a href="">账户挂失</a></li>
+                <li><a href="">账户详情</a></li>
+                <li><a href="">交易明细</a></li>
+                <li><a href="">电子现金账户</a></li>
+                <li><a href="">虚拟银行卡服务</a></li>
+                <li><a href="">账户短信服务</a></li>
+            </ul>
+        </div>
+        <div id="content2">
+            <h1>请填写您要挂失的银行卡账户信息：</h1>
+
+            <div id="information">
+                <div>
+                    <a class="input" href="#">请选择银行卡类型：</a>
+                    <select>
+                        <option value="">中国银行</option>
+                        <option value="">中国工商银行</option>
+                        <option value="">中国建设银行</option>
+                        <option value="">中国农业银行</option>
+                        <option value="">邮政储蓄银行</option>
+                        <option value="">哈尔滨银行</option>
+                        <option value="">光大银行</option>
+                        <option value="">招商银行</option>
+                        <option value="">浦发银行</option>
+                        <option value="">平安银行</option>
+                        <option value="">广发银行</option>
+                        <option value="">兴业银行</option>
+                    </select>
+                </div>
+                <div>
+                    <a class="input" href="#">请输入银行卡号：</a>
+                    <input type="text"/>
+                </div>
+                <div>
+                    <a class="input" href="#">请输入持卡人姓名：</a>
+                    <input type="text"/>
+                </div>
+                <div>
+                    <a class="input" href="#">请输入身份证号：</a>
+                    <input type="text"/>
+                </div>
+                <div>
+                    <a class="input" href="#">请输入银行卡密码：</a>
+                    <input type="password"/>
+                </div>
+            </div>
+            <div id="button1">
+                <button class="button2" id="submit">确认</button>
+                <button class="button2">返回</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer1">
+            <ul>
+                <li class="language1"><a href="#">关于我们</a></li>
+                <li class="language1"><a href="#">帮助中心</a></li>
+                <li class="language1"><a href="#">联系我们</a></li>
+                <li class="language1"><a href="#">网站协议</a></li>
+                <li class="language1"><a href="#">网站地图</a></li>
+                <li class="language1"><a href="#">个人贷款</a></li>
+                <li class="language1"><a href="#">意见反馈</a></li>
+                <li class="language1"><a href="#">友情链接</a></li>
+            </ul>
+        </div>
+        <div id="footer2">
+            <a href=""> 京ICP证88888888号 京ICP备88888888号 黑大计软有限公司</a>
+        </div>
+        <div id="footer3">
+            <div><img src="imgs/code1.jpg" alt=""/>官方微博</div>
+            <div><img src="imgs/code2.jpg" alt=""/>微信银行</div>
+            <div><img src="imgs/code3.jpg" alt=""/>手机银行</div>
+        </div>
+    </div>
+    <script>
+        (function(){
+            var oSubmit = document.getElementById("submit");
+            oSubmit.onclick = function(){
+                window.location = "lose4.html";
+            };
+        })();
+    </script>
+</body>
+</html>

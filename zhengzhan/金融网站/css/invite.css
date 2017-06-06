@@ -1,0 +1,63 @@
+/************main开始*************/
+#main{
+	height: 644px;
+}
+#main h3{
+	height: 40px;
+	font-size: 14px;
+	line-height: 50px;
+	border-bottom: 1px solid #ea3939;
+}
+#main h3 div{
+	width: 26px;
+	height: 23px;
+	background: url(../img/人才招聘.jpg);
+	margin-top: 12px;
+	margin-right: 10px;
+	float: left;
+}
+#main-left{
+	width: 340px;
+	height: 355px;	
+	background: #ea3939;
+	color: white;
+	float: left;
+	margin-top: 50px;
+	margin-left: 20px;
+}
+#main-left h2{
+	font-size: 18px;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+#main-left p{
+	width: 300px;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+#main-right{
+	width: 668px;
+	height: 478px;
+	background: #f5f5f5;
+	float: right;
+	margin-top: 50px;
+}
+#main-right h6{
+	height: 32px;
+	line-height: 32px;
+	color: #ea3939;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#main-right p{
+	font-size: 12px;
+	line-height: 20px;
+	color: #5a5a5a;
+	margin-left: 97px;
+}
+/************main结束*************/

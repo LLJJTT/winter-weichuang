@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>爱奇艺</title>
+	<link rel="stylesheet" href="css/1.css">
+</head>
+<style >
+*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	li{
+		text-decoration: none;
+	}
+	#container{
+		width: 1210px;
+		height: 350px;
+		position: relative;
+		margin: 200px auto;
+	}
+	#content img{
+
+		width: 1210px;
+		height: 350px;
+		display: none;
+	}
+	#content img.selected{
+		display: block;
+	}
+	#tab{
+		position: absolute;
+		right: 8px;
+		bottom: 10px;
+	}
+	#tab li.selected{
+		background: pink;
+	}
+	#tab li{
+		float: left;
+		width: 25px;
+		height: 25px;
+		background: #000;
+		margin-right: 5px;
+		line-height: 25px;
+		color: white;
+		text-align: center;
+		cursor: pointer;
+	}
+	</style>
+<body>
+<div id="header">
+		<div class="wrapper">
+			<img id="logo" src="img/爱奇艺logo.jpg" alt="图片">
+			<img id="run" src="img/奔跑吧兄弟.jpg" alt="图片">
+			<input id="search" type="text">
+			<a href=""><img id="go-search" src="img/搜全网.jpg" alt="图片"></a>
+			<ul>
+				<li><a href="">登录</a></li>
+				<li><a href="">注册</a></li>
+				<li><a href="">开通VIP</a></li>
+				<li><a href="">上传</a></li>
+				<li><a href="">下载客户端</a></li>
+				<li><a href="">消息</a></li>
+				<li><a href="">播放记录</a></li>
+			</ul>
+			<img id="circle" src="img/圈.jpg" alt="图片">
+		</div>
+	</div>
+	<div id="container">
+		<div id="content">
+			<img class="selected" src="img/1.png" alt="#">
+			<img src="img/2.png" alt="#">
+			<img src="img/3.png" alt="#">
+			<img src="img/4.png" alt="#">
+			<img src="img/5.png" alt="#">
+		</div>
+		<ul id="tab">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<script>
+		var oContainer = document.getElementById('container');
+		var aLi = oContainer.getElementsByTagName('li');
+		var aImg = oContainer.getElementsByTagName('img');
+		for(var i=0; i<aLi.length; i++){
+			aLi[i].index = i;
+			aLi[i].onmouseover = function(){
+				changeImg(this.index);
+			}
+		}
+		function changeImg(a){
+			for(var j=0; j<aLi.length; j++){
+				aLi[j].className = '';
+				aImg[j].className = '';
+			}
+			aLi[a].className = 'selected';
+			aImg[a].className = 'selected';
+		}
+	</script>	
+	
+</body>
+</html>

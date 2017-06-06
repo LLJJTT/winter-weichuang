@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贷款理由||填写金额||绑定卡号</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+	a{
+		text-decoration: none;
+		display: inline-block;
+	}
+	/*body{
+		background: Bisque;
+
+	}*/
+	#box{
+		text-align: center;
+		background: beige;
+		-webkit-box-flex: 1;
+	}
+	#box table{
+		margin: 0 auto;
+	}
+	#box td{
+		height: 50px;
+	}
+	#box table input{
+		width: 200px;
+		height: 30px;
+		text-indent: 10px;
+	}
+	#box table select{
+		width: 200px;
+		height: 30px;
+	}
+	#box table button{
+		width: 100px;
+		height: 30px;
+	}
+	#text1{
+		width: 674px;
+		height: 165px;
+		font-size: 30px;
+	}
+	#text2{
+		width:142px;
+		height:44px;
+		font-size: 30px;
+		color: lime;
+		margin-left: 0px;
+	}
+	h1{
+		font-size: 50px;
+		color: black;
+
+	}
+	#guanyuwomen{
+		height: 50px;
+	}
+	#reset0{
+		width:104px;
+		height:47px;
+		font-size:25px;
+		cursor:pointer;
+		color: red;
+		float: left;
+	}
+	#money ul{
+	}
+	
+	#lianxiwomen{
+		margin-top: 1px;
+	}
+	#lianxiwomen img{
+		width: 121px;
+		height: 47px;
+		margin-left: 10px;
+		cursor: pointer;
+	}
+	#yanzheng{
+		height: 50px;
+	}
+	#container1{
+		background:url(img/yanse.png);
+	}
+	#container1 img{
+		height: 95px;
+		width: 100%px;
+		
+	}
+	#container{
+		width: 100%;
+		height:388px;
+		margin: 0px auto;/*顺时针*/
+		position: relative;
+	}
+	#content img{
+		width: 100%;
+		height:388px;
+		display: none;
+		cursor: pointer;
+	}
+	#content img.selected{
+		display: block;
+	}
+	#tab{
+		position: absolute;
+		right:10px;
+		bottom:10px;
+	}
+	#tab li{
+		float: left;
+		width: 20px;
+		height:20px;
+		background: #000;
+		color:#fff;
+		cursor: pointer;
+		margin-right: 5px;
+		line-height: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
+	#tab li.selected{
+		background: orange;
+	}
+	#arrow{
+		position: absolute;
+		left:10px;
+		bottom:10px;
+		cursor: pointer;
+	}
+	#arrow span{
+		width: 20px;
+		height: 20px;
+		float: left;
+		background: #000;
+		color:#fff;
+		margin-right: 5px;
+		line-height: 20px;
+		text-align: center;
+	}
+	#you{
+		width: 305px;
+	}
+	#you img{
+		cursor: pointer;
+		width: 305px;
+		height: 100px;
+	}
+	#Maxbox{
+		width: 100%;
+		display: -webkit-box;
+	}
+
+
+</style>
+<body>
+	<!-- <body> -->
+	<div id="container1">
+		<img src="img/heida.png" alt="#">
+	</div>
+	<div id="container">
+		<div id="content">
+			<img class="selected" src="img/lun1.jpg" alt="图片" title="pic"/>
+			<img src="img/lun2.jpg"/>
+			<img src="img/lun3.jpg"/>
+			<img src="img/lun4.jpg"/>
+
+		</div>
+		<ul id="tab">
+			<li class="selected">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<div id="arrow">
+			<span id="prev">&lt;</span>
+			<span id="next">&gt;</span>
+		</div>
+	</div>
+	<div id="Maxbox">
+		<div id="shangjia"><img style="cursor:pointer;" src="img/zuomian.jpg" alt=""></div>
+		<div id="box">
+			<div id="reason">
+
+				<form action="">
+
+					<h1>请输入贷款理由</h1>
+					<textarea placeholder="请输入理由" id="text1" cols="30" rows="10"></textarea>
+					<button id="reset1" type="Reset" value="Reset">重置</button>
+				</form>
+			</div>
+			<br>
+			<br>
+			<br>
+			<table>
+				<form action="">
+					<tr>
+						<td>请选择卡的类型:</td>
+						<td>
+							<select id="select1">
+								<!-- <option value="0"></option>   -->
+								<option value="1">中国银行</option>
+								<option value="2">农业银行</option>
+								<option value="3">邮政银行</option>
+								<option value="4">光大银行</option>
+								<option value="5">工商银行</option>
+								<option value="6">招商银行</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>请输入卡号:</td>
+						<td><input type="text" placeholder="请输入卡号"></td>
+					</tr>
+					<tr>
+						<td>请输入金额</td>
+						<td><input type="text" placeholder="请输入金额"></td>
+					</tr>
+					<tr>
+						<td><button type="submit" id="submit">确定</button></td>
+						<td><button type="reset">重置</button></td>
+					</tr>
+				</form>
+			</table>
+			<br><br><br><br><br><br><br><br><br>
+			<div id="guanyuwomen">
+				<p>
+					<a href="">关于我们</a>|
+					<a href="https://www.baidu.com">帮助中心</a>|
+					<a href="">联系我们</a>|
+					<a href="https://www.baidu.com">网站协议</a>|
+					<a href="http://map.baidu.com/">网站地图</a>|
+					<a href="">意见反馈</a>|
+					<a href="https://www.baidu.com">友情链接</a>|
+				</p>
+			</div>
+			<br>
+			<div id="yanzheng">
+				<p>
+					<a href="">京ICP证2016 11 15号</a>
+					京ICP证150227号 京ICP备150228号 CreditEase 2000-2016 黑龙江大学2014级软件三班
+				</p>
+			</div>
+			<div id="lianxiwomen">
+				<span><img  src="../img/2.png"></span>
+				<span><img  src="../img/3.png"></span>
+				<span><img  src="../img/4.png"></span>
+				<span><img  src="../img/5.png"></span>
+			</div>
+		</div>
+		<div id="you">
+			<img src="img/you1.jpg" alt="">
+			<img src="img/you2.jpg" alt="">
+			<img src="img/you3.jpg" alt="">
+			<img src="img/you4.jpg" alt="">
+			<img src="img/you5.jpg" alt="">
+			<img src="img/you6.jpg" alt="">
+		</div>
+	</div>
+	<script>
+		var oContainer = document.getElementById('container');
+		var aLi = oContainer.getElementsByTagName('li');
+		var aImg = oContainer.getElementsByTagName('img');
+		var oNext = document.getElementById('next');
+		var oPrev = document.getElementById('prev');
+        var iNow = 0;//存储当前显示的索引
+        for(var i=0; i<aLi.length; i++){
+        	aLi[i].index = i;
+        	aLi[i].onmouseover = function(){
+        		changeImg(this.index);
+        		iNow = this.index;
+        	}
+        }
+
+        oNext.onclick = function(){
+        	iNow++;
+        	if(iNow == aLi.length){
+        		iNow = 0;
+        	}
+        	changeImg(iNow);
+            // aLi[this.index]
+
+        }
+        oPrev.onclick = function(){
+        	iNow--;
+        	if(iNow == -1){
+        		iNow = aLi.length -1;
+        	}
+        	changeImg(iNow);
+        }
+
+        function changeImg(a){
+        	for(var j=0; j<aLi.length; j++){
+        		aLi[j].className = '';
+        		aImg[j].className = '';
+        	}
+        	aLi[a].className = 'selected';
+        	aImg[a].className = 'selected';
+        }
+        var timer;
+        timer = setInterval(function(){
+        	oNext.onclick();
+        },2000);
+        oContainer.onmouseover = function(){
+        	clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+        	timer = setInterval(function(){
+        		oNext.onclick();
+        	},2000);
+        };
+        var oSubmit = document.getElementById("submit");
+        oSubmit.onclick = function(){
+        	location = "../Waiting/wait.html";
+        	return false;
+        };
+    </script>
+</body>
+</html>

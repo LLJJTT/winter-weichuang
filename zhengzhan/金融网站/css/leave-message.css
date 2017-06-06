@@ -1,0 +1,86 @@
+/***********main开始*************/
+#main{
+	height: 666px;
+}
+#main h1{
+	font-size: 14px;
+	height: 26px;
+	line-height: 30px;
+	border-bottom: 1px solid #ea3939;
+	padding-top: 20px;
+	margin-bottom: 50px;
+}
+#main h1 div{
+	width: 26px;
+	height: 23px;
+	background: url(../img/在线留言.jpg);
+	float: left;
+	margin-right: 10px;
+	margin-top: 1px;
+}
+#main-left{
+	width: 340px;
+	height: 355px;	
+	background: #ea3939;
+	color: white;
+	float: left;
+	margin-left: 20px;
+}
+#main-left h2{
+	font-size: 18px;
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+#main-left p{
+	width: 300px;
+	font-size: 12px;
+	line-height: 30px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+#main-right{
+	width: 690px;
+	height: 450px;
+	float: right;
+}
+#main-right ul li{
+	height: 40px;
+	margin-bottom: 10px;
+	color: #5a5a5a;
+	font-size: 16px;
+}
+#main-right span{
+	display: block;
+	float: left;
+	padding-right: 10px;
+	width: 100px;
+	text-align: right;
+}
+#main-right ul li input{
+	width: 460px;
+	height: 38px;
+}
+#main-right textarea{
+	width: 460px;
+	height: 156px;
+}
+#main-right div{
+	font-size: 12px;
+	color: #5a5a5a;
+}
+#main-right a{
+	display: block;
+	width: 100px;
+	height: 35px;
+	background: #6c6c6c;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+/***********main结束*************/

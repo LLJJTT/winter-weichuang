@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>跳转页面</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 300px;
+            background: #cccccc;
+            margin: 100px auto;
+            font-size: 40px;
+            border-radius: 20px;
+            text-align: center;
+            /*line-height: 300px;*/
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div style="padding-top: 80px;">处理中...</div><br>
+    <span id="span1">5</span>秒后自动跳转页面
+</div>
+
+<script>
+
+    var oSpan = document.getElementById("span1");
+    var speed = 5;
+    setInterval(function(){
+        speed--;
+        oSpan.innerHTML = speed;
+        if(speed == 0){
+            window.location = "lose2.html";
+        }
+    },1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>挂失菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px/1.6em Microsoft YaHei, Tahoma, simsun;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #head {
+            width: 100%;
+            height: 120px;
+            background: url("imgs/head.png");
+        }
+
+        #head h1 {
+            font-size: 40px;
+            width: 200px;
+            height: 60px;
+            color: darkblue;
+            margin-left: 100px;
+        }
+
+        #head h2 {
+            font-size: 20px;
+            width: 200px;
+            color: darkblue;
+            margin-left: 100px;
+        }
+
+        #head1 {
+            float: left;
+        }
+
+        #search {
+            width: 800px;
+            height: 40px;
+            margin-top: 80px;
+            margin-left: 5px;
+            float: right;
+        }
+        #search1{
+            font-size: 18px;
+            color: darkblue;
+        }
+        #header {
+            width: 100%;
+            height: 50px;
+            background: #eee;
+        }
+
+        #header #choose {
+            width: 1300px;
+            height: 50px;
+            margin: 0 auto;
+            background: #eeeeee;
+        }
+
+        #header .language {
+            width: 180px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        #header #choose a:hover {
+            color: orange;
+        }
+
+        #container {
+            background: white;
+            width: 1350px;
+            height: 404px;
+        }
+
+        #content1 {
+            width: 200px;
+            height: 400px;
+            background: #eeeeee;
+            border: 2px solid #cccccc;
+            margin-left: 90px;
+            text-indent: 5px;
+            float: left;
+        }
+
+        #content1 h1 {
+            font-size: 25px;
+            height: 60px;
+            width: 180px;
+            line-height: 60px;
+            margin-left: 10px;
+            border-bottom: 2px solid #cccccc;
+        }
+
+        #content1 li {
+            margin-left: 10px;
+            height: 50px;
+            width: 200px;
+            line-height: 50px;
+        }
+
+        #content1 li a:hover {
+            color: orange;
+        }
+
+        #content2 {
+            width: 1000px;
+            height: 400px;
+            background: #FFF;
+            float: left;
+            margin-left: 30px;
+            border: 2px solid #cccccc;
+        }
+
+        #content2 h1 {
+            width: 900px;
+            height: 40px;
+            border-radius: 10px;
+            background: #eeeeee;
+            margin: 5px auto;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        #reason {
+            width: 950px;
+            height: 120px;
+            margin: auto;
+        }
+
+        #button1 {
+            margin-left: 465px;
+            margin-bottom: 10px;
+        }
+
+        #serve {
+            width: 960px;
+            height: 180px;
+            background: white;
+            margin: auto;
+            border: 2px solid #cccccc;
+        }
+
+        #serve a {
+            font-size: 23px;
+        }
+
+        #serve1 div {
+            float: left;
+            width: 49px;
+            height: 100px;
+            margin-left: 23px;
+            margin-top: 20px;
+        }
+
+        #footer {
+            background: url("imgs/footer.png");
+            width: 100%;
+            height: 150px;
+            position: relative;
+        }
+
+        #footer1 {
+            width: 500px;
+            height: 100px;
+            margin-left: 200px;
+        }
+
+        #footer1 .language1 {
+            float: left;
+            width: 60px;
+            line-height: 100px;
+        }
+
+        #footer2 {
+            width: 500px;
+            height: 20px;
+            text-align: center;
+            font-size: 10px;
+            margin-left: 200px;
+        }
+
+        #footer3 {
+            position: absolute;
+            right: 80px;
+            top: 30px;
+            width: 350px;
+            height: 80px;
+            float: left;
+        }
+
+        #footer3 div {
+            width: 57px;
+            height: 80px;
+            float: left;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="head">
+    <div id="head1">
+        <h1>网上银行</h1>
+
+        <h2>BOCNET</h2>
+    </div>
+    <div id="search">
+        <span id="search1">客服热线：888888</span>
+        <input type="text"/>
+        <button>搜索</button>
+    </div>
+</div>
+<div id="header">
+    <div id="choose">
+        <ul>
+            <li class="language"><a href="#">返回首页</a></li>
+            <li class="language"><a href="#">个人中心</a></li>
+            <li class="language"><a href="#">登陆记录</a></li>
+            <li class="language"><a href="#">消费记录</a></li>
+            <li class="language"><a href="#">网上贷款</a></li>
+            <li class="language"><a href="#">VIP业务</a></li>
+            <li class="language"><a href="#">退出登录</a></li>
+        </ul>
+    </div>
+</div>
+<div id="container">
+    <div id="content1">
+        <h1>银行账户</h1>
+        <ul>
+            <li><a href="">账户挂失</a></li>
+            <li><a href="">账户详情</a></li>
+            <li><a href="">交易明细</a></li>
+            <li><a href="">电子现金账户</a></li>
+            <li><a href="">虚拟银行卡服务</a></li>
+            <li><a href="">账户短信服务</a></li>
+        </ul>
+    </div>
+    <div id="content2">
+        <h1>请输入您要挂失的理由：</h1>
+
+        <div id="reason">
+            <textarea rows="6" cols="155" placeholder="请输入您要挂失的理由："></textarea>
+        </div>
+        <div id="button">
+            <button id="button1">确认提交</button>
+        </div>
+        <div id="serve">
+            <a href="">便捷服务</a>
+
+            <div id="serve1">
+                <div>
+                    <img src="imgs/serve1.gif" alt=""/>
+                    手机银行客户端
+                </div>
+                <div>
+                    <img src="imgs/serve2.gif" alt=""/>
+                    服务价目
+                </div>
+                <div>
+                    <img src="imgs/serve3.gif" alt=""/>
+                    自助填单
+                </div>
+                <div>
+                    <img src="imgs/serve4.gif" alt=""/>
+                    民生资费
+                </div>
+                <div>
+                    <img src="imgs/serve5.gif" alt=""/>
+                    回单验证
+                </div>
+                <div>
+                    <img src="imgs/serve6.gif" alt=""/>
+                    在线开立电子帐户
+                </div>
+                <div>
+                    <img src="imgs/serve7.gif" alt=""/>
+                    网上边贸
+                </div>
+                <div>
+                    <img src="imgs/serve8.gif" alt=""/>
+                    在线申请信用卡
+                </div>
+                <div>
+                    <img src="imgs/serve9.gif" alt=""/>
+                    长城国际卡
+                </div>
+                <div>
+                    <img src="imgs/serve10.gif" alt=""/>
+                    计算器
+                </div>
+                <div>
+                    <img src="imgs/serve11.gif" alt=""/>
+                    企业年会
+                </div>
+                <div>
+                    <img src="imgs/serve12.gif" alt=""/>
+                    中小企业在线融资
+                </div>
+                <div>
+                    <img src="imgs/serve13.gif" alt=""/>
+                    业务验证
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="footer1">
+        <ul>
+            <li class="language1"><a href="#">关于我们</a></li>
+            <li class="language1"><a href="#">帮助中心</a></li>
+            <li class="language1"><a href="#">联系我们</a></li>
+            <li class="language1"><a href="#">网站协议</a></li>
+            <li class="language1"><a href="#">网站地图</a></li>
+            <li class="language1"><a href="#">个人贷款</a></li>
+            <li class="language1"><a href="#">意见反馈</a></li>
+            <li class="language1"><a href="#">友情链接</a></li>
+        </ul>
+    </div>
+    <div id="footer2">
+        <a href=""> 京ICP证88888888号 京ICP备88888888号 黑大计软有限公司</a>
+    </div>
+    <div id="footer3">
+        <div><img src="imgs/code1.jpg" alt=""/>官方微博</div>
+        <div><img src="imgs/code2.jpg" alt=""/>微信银行</div>
+        <div><img src="imgs/code3.jpg" alt=""/>手机银行</div>
+    </div>
+</div>
+
+<script>
+    var oContainer = document.getElementById("container");
+    var oButton = document.getElementById('button1');
+    oButton.onclick = function () {
+        window.location = "lose3.html";
+    };
+</script>
+</body>
+</html>

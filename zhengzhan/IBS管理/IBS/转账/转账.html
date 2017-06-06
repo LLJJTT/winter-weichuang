@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #bj {
+            width: 100%;
+            height: 100%;
+        }
+        #bj img{
+            width: 100%;
+            height: 100%;
+        }
+        #gd{
+            width: 800px;
+            height: 100px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            margin-left: -400px;
+            overflow: hidden;
+        }
+        #gda {
+            width: 1700px;
+            height: 80px;
+            position: relative;
+        }
+        #gd li{
+            width: 80px;
+            height: 80px;
+            font-size: 72px;
+            color: olivedrab;
+            line-height: 80px;
+            text-align: center;
+            margin-right: 5px;
+            float: left;
+        }
+        #gn{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 400px;
+            left: 50%;
+            margin: -200px;
+        }
+        #container p{
+            width: 400px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+            top: 50px;
+            left: 50%;
+            margin-left: -200px;
+        }
+        #container .box{
+            position: absolute;
+            left: 50%;
+            margin-left: -300px;
+            top: 150px;
+            background: #fff;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="bj">
+            <img src="tupian/3.jpg"/>
+        </div>
+        <div id="gd">
+            <ul id="gda">
+                <li>欢</li>
+                <li>迎</li>
+                <li>您</li>
+                <li>使</li>
+                <li>用</li>
+                <li>转</li>
+                <li>账</li>
+                <li>系</li>
+                <li>统</li>
+                <li>,</li>
+                <li>很</li>
+                <li>开</li>
+                <li>心</li>
+                <li>为</li>
+                <li>您</li>
+                <li>服</li>
+                <li>务</li>
+                <li>。</li>
+            </ul>
+        </div>
+        <div class="box" ng-app="myApp" ng-controller="myCtrl">
+            <h2>用户转账</h2>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">银行卡号:</label>
+                    <div class="col-xs-7">
+                        <input type="text" name="card" ng-model="card" placeholder="请输入代收款者的卡号" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">收款者姓名:</label>
+                    <div class="col-xs-7">
+                        <input type="text" ng-model="name" name="name" placeholder="请输入收款者姓名" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">转账金额:</label>
+                    <div class="col-xs-7">
+                        <input type="text" ng-model="pay" name="pay" placeholder="请输入转账金额" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-3 col-xs-offset-2">
+                        <button type="submit" class="btn btn-default" id="submit">确定</button>
+                    </div>
+                    <div class="col-xs-3 col-xs-offset-2">
+                        <button type="reset" class="btn btn-default">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/angular-1.2.18/angular.min.js"></script>
+    <script>
+        (function(){
+            var oIn3 = document.getElementById('in3')
+            var oGda = document.getElementById('gda');
+            oGda. innerHTML = oGda.innerHTML + oGda.innerHTML;
+            var aLi = oGda.getElementsByTagName('li');
+            oGda.style.width = aLi.length*(aLi[0].offsetWidth + 5) + 'px';
+            var speed = -2;
+            setInterval(function(){
+                if(oGda.offsetLeft <= -oGda.offsetWidth/2){
+                    oGda.style.left = 0;
+                }
+                oGda.style.left = oGda.offsetLeft + speed + "px";
+            },30);
+            var oSubmit = document.getElementById("submit");
+            var app = angular.module("myApp", []);
+            var loginUser = JSON.parse(sessionStorage.loginUser);
+            app.controller("myCtrl", function($http, $scope){
+                oSubmit.onclick = function(){
+                    var loginUser = JSON.parse(sessionStorage.loginUser);
+                    if(parseInt($scope.pay) > loginUser.monney){
+                        alert("您的金额不足");
+                        return false;
+                    }
+                    $http({
+                        method: "GET",
+                        url: "http://127.0.0.1/IBS_php/user/pay",
+                        params: {
+                            card : $scope.card,
+                            name : $scope.name,
+                            pay : $scope.pay,
+                            user_card : loginUser.card
+                        }
+                    }).success(function(data){
+                        if(data == "0"){
+                            alert("请确认输入的卡号姓名是否正确");
+                            return false;
+                        }
+                        loginUser.monney = data;
+                        sessionStorage.loginUser = JSON.stringify(loginUser);
+                        window.location = "转账1.html";
+                    });
+                    return false;
+                };
+            });
+        })();
+
+    </script>
+</body>
+</html>

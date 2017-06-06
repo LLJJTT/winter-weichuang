@@ -1,0 +1,107 @@
+/*************main开始***************/
+#main{
+	height: 1290px;
+}
+#main-left{
+	width: 290px;
+	height: 1281px;
+	float: left;
+}
+#main-left h6{
+	width: 290px;
+	height: 37px;
+	font-size: 15px;
+	line-height: 37px;
+	border-bottom: 2px solid red;
+	color: red;
+	margin-bottom: 5px;
+}
+#main-left h6 img{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+#main-left ul{
+	margin-bottom: 15px;
+}
+#main-left ul li{
+	width: 290px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 15px;
+	font-weight: bold;
+	border-bottom: 1px solid #A9A9A9;
+}
+#main-left ul li a{
+	background: url(../img/main-left-li-bg.png);
+	display: block;
+	width: 290px;
+	height: 40px;
+	color: red;
+}
+#main-left ul li a:hover{
+	background: white;
+}
+#main-left-down{
+	width: 290px;
+	height: 340px;
+	background: url(../img/nav-bg.png);
+}
+#main-left-down h3{
+	width: 250px;
+	height: 32px;
+	color: white;
+	margin: 0 auto;
+	line-height: 32px;
+	padding-top: 20px;
+}
+#ten-years{
+	width: 250px;
+	height: 120px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: white;
+	line-height: 30px;
+	margin-top: 10px;
+	overflow: hidden;
+	margin-bottom: 80px;
+	font-weight: bold;
+}
+#main-left-down a{
+	color: white;
+}
+.know{
+	color: white;
+	font-size: 12px;
+	width: 250px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 auto;
+	font-weight: bold;
+}
+#main-right{
+	width: 770px;
+	height: 1280px;
+	float: right;
+}
+#main-right h6{
+	width: 770px;
+	height: 37px;
+	font-size: 15px;
+	line-height: 37px;
+	border-bottom: 2px solid black;
+}
+#main-right p{
+	width: 750px;
+	margin: 0 auto;
+	font-size: 13px;
+	line-height: 30px;
+	color: #2F4F4F;
+}
+#main-right-p-two p{
+	text-indent: 1em;
+}
+#main-right-p-one img{
+	float: right;
+}
+/*************main结束***************/
